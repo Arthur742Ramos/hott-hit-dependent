@@ -1,0 +1,195 @@
+{
+  "vendor": "isabelle-prover/isabelle-linter",
+  "release": "Isabelle2026-v1.0.0",
+  "commit": "146d9fc0bbd304dd6f15fdb607331f7d81e92723",
+  "archive_sha256": "5dcf7c1cb6975e1169399988781e4616ff7f1567a59bfcb01288d427a404cd0a",
+  "isabelle": "Isabelle2026",
+  "source_set_sha256": "bbe74d0f6c3d17973d7e9913309989c39e42c082f4d330cfb3271f11f2a6ee20",
+  "mandatory_before": {
+    "theories": 30,
+    "errors": 1
+  },
+  "mandatory_after": {
+    "theories": 30,
+    "errors": 0,
+    "warnings": 0,
+    "exit_code": 0
+  },
+  "default_after": {
+    "theories": 30,
+    "errors": 0,
+    "warnings": 19,
+    "exit_code": 0,
+    "warnings_by_rule": {
+      "complex_method": 7,
+      "tactic_proofs": 7,
+      "auto_structural_composition": 5
+    }
+  },
+  "remaining_advisories": [
+    {
+      "theory": "HoTT_HIT_Dependent.DHIT_Argument_Projection",
+      "findings": [
+        {
+          "name": "complex_method",
+          "severity": "warn",
+          "startPosition": "17:6",
+          "stopPosition": "17:83"
+        },
+        {
+          "name": "tactic_proofs",
+          "severity": "warn",
+          "startPosition": "17:66",
+          "stopPosition": "17:76"
+        }
+      ]
+    },
+    {
+      "theory": "HoTT_HIT_Dependent.DHIT_Displayed_Algebra",
+      "findings": [
+        {
+          "name": "complex_method",
+          "severity": "warn",
+          "startPosition": "369:6",
+          "stopPosition": "373:47"
+        }
+      ]
+    },
+    {
+      "theory": "HoTT_HIT_Dependent.DHIT_Endpoint_Functor",
+      "findings": [
+        {
+          "name": "complex_method",
+          "severity": "warn",
+          "startPosition": "195:8",
+          "stopPosition": "195:58"
+        }
+      ]
+    },
+    {
+      "theory": "HoTT_HIT_Dependent.DHIT_Generator_Naturality",
+      "findings": [
+        {
+          "name": "complex_method",
+          "severity": "warn",
+          "startPosition": "14:6",
+          "stopPosition": "14:56"
+        },
+        {
+          "name": "tactic_proofs",
+          "severity": "warn",
+          "startPosition": "14:39",
+          "stopPosition": "14:49"
+        },
+        {
+          "name": "complex_method",
+          "severity": "warn",
+          "startPosition": "18:6",
+          "stopPosition": "18:56"
+        },
+        {
+          "name": "tactic_proofs",
+          "severity": "warn",
+          "startPosition": "18:39",
+          "stopPosition": "18:49"
+        }
+      ]
+    },
+    {
+      "theory": "HoTT_HIT_Dependent.DHIT_Interchange",
+      "findings": [
+        {
+          "name": "tactic_proofs",
+          "severity": "warn",
+          "startPosition": "64:33",
+          "stopPosition": "64:43"
+        }
+      ]
+    },
+    {
+      "theory": "HoTT_HIT_Dependent.DHIT_Interchange_Examples",
+      "findings": [
+        {
+          "name": "auto_structural_composition",
+          "severity": "warn",
+          "startPosition": "335:10",
+          "stopPosition": "335:93"
+        },
+        {
+          "name": "auto_structural_composition",
+          "severity": "warn",
+          "startPosition": "345:10",
+          "stopPosition": "345:93"
+        }
+      ]
+    },
+    {
+      "theory": "HoTT_HIT_Dependent.DHIT_Parameter_Algebra",
+      "findings": [
+        {
+          "name": "tactic_proofs",
+          "severity": "warn",
+          "startPosition": "71:42",
+          "stopPosition": "71:72"
+        },
+        {
+          "name": "auto_structural_composition",
+          "severity": "warn",
+          "startPosition": "515:6",
+          "stopPosition": "515:77"
+        },
+        {
+          "name": "complex_method",
+          "severity": "warn",
+          "startPosition": "526:6",
+          "stopPosition": "531:73"
+        }
+      ]
+    },
+    {
+      "theory": "HoTT_HIT_Dependent.DHIT_Parameter_Congruence",
+      "findings": [
+        {
+          "name": "tactic_proofs",
+          "severity": "warn",
+          "startPosition": "104:32",
+          "stopPosition": "104:43"
+        }
+      ]
+    },
+    {
+      "theory": "HoTT_HIT_Dependent.DHIT_Quotient_Functor",
+      "findings": [
+        {
+          "name": "complex_method",
+          "severity": "warn",
+          "startPosition": "147:6",
+          "stopPosition": "147:56"
+        },
+        {
+          "name": "tactic_proofs",
+          "severity": "warn",
+          "startPosition": "147:39",
+          "stopPosition": "147:49"
+        }
+      ]
+    },
+    {
+      "theory": "HoTT_HIT_Dependent.DHIT_Type_Formers",
+      "findings": [
+        {
+          "name": "auto_structural_composition",
+          "severity": "warn",
+          "startPosition": "59:6",
+          "stopPosition": "59:62"
+        },
+        {
+          "name": "auto_structural_composition",
+          "severity": "warn",
+          "startPosition": "64:6",
+          "stopPosition": "64:60"
+        }
+      ]
+    }
+  ]
+}

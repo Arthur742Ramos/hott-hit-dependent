@@ -72,8 +72,8 @@ lemma lift_path_append [simp]: "lift_path C (p @ q) = lift_path C p @ lift_path 
   by (simp add: lift_path_def)
 
 lemma lift_path_composition [simp]: "lift_path (plug_edge C D) p = lift_path C (lift_path D p)"
-  unfolding lift_path_def
-proof (simp only: map_map; rule map_cong)
+  unfolding lift_path_def map_map
+proof (rule map_cong)
   show "p = p" by simp
   fix d assume "d \<in> set p"
   show "map_dart (plug_edge (plug_edge C D)) d =

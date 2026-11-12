@@ -1,6 +1,6 @@
 {
   "format": "SHA256 of formal and document sources",
-  "source_set_sha256": "20e62f36eb48ee3df081e219e1b19d2b835dd3889c013638886b5ccdbe7a045a",
+  "source_set_sha256": "bbe74d0f6c3d17973d7e9913309989c39e42c082f4d330cfb3271f11f2a6ee20",
   "source_set_encoding": "UTF-8 JSON of the files mapping with sorted keys and separators comma/colon, no whitespace",
   "files": {
     "DHIT_Admissible_Paths.thy": "4e5f288f6e204c1177b7ff277508f22b2ea5839b53d01c839fae19d5b71fd2eb",
@@ -14,12 +14,12 @@
     "DHIT_Dependent_Transport.thy": "85a9752a40ed2bd4866de50b9a587149940e2a9d34fa56d44ca16d3c3328301f",
     "DHIT_Displayed_Algebra.thy": "652d6646b381961ffa1a8a5d3d58d4e62c789d895251d8f64265a71b94ad794b",
     "DHIT_Displayed_Substitution.thy": "477e3af00c8c5a6194088cd84605cab6061aa2dadeaf37c1d588f8f989e437f4",
-    "DHIT_Endpoint_Functor.thy": "3917c18c88cb259831ceee25b7a5f4bb63615eeab9f9a626fa5d41535c52eb80",
+    "DHIT_Endpoint_Functor.thy": "4fe6c3c89186c2d8542b185bb8c2293eff0b1eea4cc6a6c2a59d991ffc45ec54",
     "DHIT_Endpoint_Paths.thy": "7f9ad3b50da02353b1d5dc1b0b0d5bd966d5191f2fefc6fd51303f6a625affbd",
     "DHIT_Endpoint_Serialization.thy": "683071344fa35f78192042e3e0b2e8b3479854a13d5e0a5b0cde6f51fd84d63e",
     "DHIT_Families.thy": "bd86ae80689a45b754b9af81c5433ae7d3c2000064f302e812d0333ed2ac206b",
     "DHIT_Generator_Naturality.thy": "85340a2bd2fc4261d54c63be09d39c8e6da2ae964301d6f825093ed5439afbda",
-    "DHIT_Interchange.thy": "b7b9ea1b0b720a035547f3b50ddfbb195f40b2186eeda2f70a8b7e3753913d46",
+    "DHIT_Interchange.thy": "f6ba7eec9dfd22fcd5f65df33c5c4e72a5fa9db7644b7804feb281abccfcba25",
     "DHIT_Interchange_Examples.thy": "92592e7b5021f5b81adf3111816366bf6fa7c4a0a7123535b2fb1f0da909c728",
     "DHIT_Local_Naturality.thy": "e2523c0b67f30fc7b5fe552981829a5d2dfb680fb18d9b8d10a1cda050ae4dc2",
     "DHIT_Parameter_Algebra.thy": "3b21bbbd4616e72a14e840201d5d29ef814ec4d60207fa58b71631318a75ae1a",

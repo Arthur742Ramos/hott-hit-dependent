@@ -64,25 +64,26 @@ manual review is not an official linter pass.
   that arithmetic requirement.
 - One intended AFP session and its PDF, with correct ROOT/document layout.
 - Appropriate primary citations and complete, correctly rendered references.
-- Run the applicable official linter and resolve findings before claiming a
-  guideline pass. **No AFP linter is currently installed in this workspace.**
-  Manual/static inspection is not a linter result.
+- Official `afp_mandatory` lint now passes all 30 theories with zero findings.
+  The default bundle reports 19 independently reviewed advisories, not errors.
+  See `LINT.md` for the pinned official release, rules and exact source scope.
+  This does not certify every guideline or editorial requirement.
 
 A keyword scan should distinguish actual proof commands from discussion in
 comments or documentation. It cannot validate generated instantiations,
 attribute discipline, indentation, mathematical scope or proof robustness.
-Record the tool and rule set used for any later automated lint result.
+The exact tool and rule sets are recorded in `LINT.md`.
 
 ## Remaining submission gates
 
-1. Run the official AFP mandatory linter on the exact candidate and address
-   its findings. It is not installed in the current workspace and was not run.
-   Manual/static review and targeted proof-cleanup checks are not substitutes.
-2. Review the candidate's mathematical scope, organization, related-library
+The official mandatory lint gate is complete for this candidate; rerun it
+after future source changes. Remaining gates are:
+
+1. Review the candidate's mathematical scope, organization, related-library
    assessment, bibliographic metadata and maintainer commitment with the
    authors. Automated independent source review is not external human peer
    review or a prediction of acceptance.
-3. Obtain explicit authorization before uploading or submitting to AFP or
+2. Obtain explicit authorization before uploading or submitting to AFP or
    contacting editors. The repository draft's readiness/merge decision remains
    separate from this preparation work.
 

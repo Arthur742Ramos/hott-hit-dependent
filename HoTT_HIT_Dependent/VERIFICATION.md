@@ -6,9 +6,9 @@
 - Official Linux distribution SHA256:
   `858c995b32216b3876bf395c3be843147d1f1eee404bc6c958d7534ee335e48d`.
 - Formal/document source-set SHA256:
-  `20e62f36eb48ee3df081e219e1b19d2b835dd3889c013638886b5ccdbe7a045a`.
+  `bbe74d0f6c3d17973d7e9913309989c39e42c082f4d330cfb3271f11f2a6ee20`.
   `SOURCE_MANIFEST.json` specifies the encoding and all 33 constituent digests.
-- 30 theories, 7,059 theory-source lines and 490 named lemma/theorem/corollary
+- 30 theories, 7,063 theory-source lines and 490 named lemma/theorem/corollary
   commands, including helper results. These counts do not measure mathematical
   novelty. The in-session audit checks 97 selected headline fact references.
 - Full proof and PDF builds passed with exit status zero against both parents:
@@ -19,8 +19,10 @@
 - The initial builds used independently initialized Isabelle user-state
   directories and rebuilt the parent metatheory and the new entry. No prior
   custom session heap supplied the new proofs. PDF inspection then prompted
-  two whitespace-only line wraps in proof text. The exact final entry was
-  rebuilt with proofs, oracle audit and PDF output against each cached parent.
+  two whitespace-only line wraps in proof text. A later official-linter pass
+  motivated two proof-structure/scoping corrections, without changing any
+  mathematical statement or assumption. The exact final entry was rebuilt
+  with proofs, oracle audit and PDF output against each cached parent.
 - The entry's formal/document sources are byte-identical in both configurations.
   All 17 monorepo parent formal/document files were compared with their remote
   Git blob hashes. The public dependency's recorded SHA256 hashes also passed.
@@ -39,7 +41,8 @@ This produces both the full document and the AFP-style outline. In the
 monorepo configuration, add the parent metatheory directory with `-d` and use
 `-D` on this entry. The two configurations share the same session and theory
 sources. The sanitized build summaries in the standalone `validation/`
-directory distinguish fresh-parent runs from final formatting rechecks.
+directory distinguish fresh-parent runs, formatting rechecks and the final
+post-lint full builds.
 
 ## Independent review and trust
 
@@ -61,13 +64,13 @@ in the new entry. The sole ML block performs the audit. Explicit locale
 hypotheses, chosen representatives and out-of-domain HOL `undefined` are
 documented in `TRUST_AND_SCOPE.md`, not treated as discharged assumptions.
 
-A final bounded Mirabelle/Sledgehammer pass over selected local/global locale
-assembly proof ranges made one nontrivial call, which timed out. It supplied no
-replacement proof and no source changes. This is separate from, and does not
-invalidate, the successful checked Isabelle proofs. Earlier development passes
-are not counted as extra evidence for this final source snapshot.
+A bounded Mirabelle/Sledgehammer pass after the lint corrections examined the
+touched interchange proof range: three calls, two timeouts and one suggestion
+of the existing `by simp` proof. No source changes resulted. An earlier pass
+over the local/global assembly had one timeout. These exploratory outcomes are
+separate from the successful checked Isabelle proofs.
 
-The final 161-page full PDF and 101-page outline have embedded fonts and passed
+The final 162-page full PDF and 102-page outline have embedded fonts and passed
 all-page text-boundary checks and representative visual inspection, including
 the scope, examples, coherent-elimination result and references. An initial
 clipped proof line was corrected and both configurations rechecked.
@@ -87,7 +90,11 @@ property, higher groupoid-valued motives, quotient-level substitution,
 normalization or a decision procedure for quotient equality. Imported
 object-language typing needs its stated external-carrier hypotheses.
 
-The official AFP linter has not been installed or run. AFP editorial suitability,
-author/maintainer metadata, final readiness approval and submission remain
-separate gates. No AFP, journal or registry submission, external editor contact
+The official Isabelle2026-v1.0.0 linter processed all 30 theories. Its
+`afp_mandatory` bundle passed with zero findings and exit 0; the `default`
+bundle reported 19 independently reviewed advisory warnings and no errors.
+No lint rules were disabled. `LINT.md` pins the tool, source and exact scope;
+a mandatory pass does not certify every AFP guideline. AFP editorial
+suitability, author/maintainer metadata, final readiness approval and submission
+remain separate gates. No AFP, journal or registry submission, external editor contact
 or repository CI success is claimed by this record.

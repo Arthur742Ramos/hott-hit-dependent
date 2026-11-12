@@ -18,11 +18,10 @@ proof -
   show ?thesis by (simp add: lift_path_def F)
 qed
 
-declare constructor_motion.simps(2)[simp del]
-declare constructor_motion_Cons[simp]
-
 lemma constructor_motion_identity:
-  "constructor_motion k bs xs xs (replicate (length xs) []) = []"
+  notes [simp del] = constructor_motion.simps(2)
+    and [simp] = constructor_motion_Cons
+  shows "constructor_motion k bs xs xs (replicate (length xs) []) = []"
   by (induct xs arbitrary: bs) simp_all
 
 locale endpoint_functor = mixed_context_graph S h P E s t
@@ -33,6 +32,11 @@ sublocale paths: parameter_path_structure S h P E s t
   by unfold_locales (auto intro: source_points target_points)
 
 abbreviation eqp where "eqp \<equiv> presented_eq admitted csrc cdst interchange_relation"
+
+context
+  notes [simp del] = constructor_motion.simps(2)
+    and [simp] = constructor_motion_Cons
+begin
 
 lemma slot_motion_typed:
   "parameter_slot S h P k bs zs \<Longrightarrow> walk_on admitted csrc cdst x p y \<Longrightarrow>
@@ -490,9 +494,9 @@ qed
 
 end
 
-text \<open>The original recursive simplification rule is restored for
-theories importing this module.\<close>
-declare constructor_motion_Cons[simp del]
-declare constructor_motion.simps(2)[simp]
+end
+
+text \<open>The alternative recursive simplification rule is confined to
+the preceding proof context; importing theories retain the original rule.\<close>
 
 end

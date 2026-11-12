@@ -135,8 +135,10 @@ isabelle build -d /path/to/HoTT_HIT_Metatheory -D . \
 
 The session includes every theory and its headline oracle-dependency audit.
 The verification record identifies the full proof/PDF builds and source hashes.
-See `AFP_PREPARATION.md` for the remaining submission-readiness checks, notably
-the official linter, which has not been run.
+The official `afp_mandatory` linter bundle passes all 30 theories with zero
+findings. The default bundle retains 19 independently reviewed advisories.
+See `LINT.md` for exact rules/results and `AFP_PREPARATION.md` for remaining
+author and submission-readiness decisions.
 
 ## Attribution and related work
 

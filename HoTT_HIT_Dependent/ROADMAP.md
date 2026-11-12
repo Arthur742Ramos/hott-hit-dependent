@@ -39,8 +39,8 @@ either property for the enlarged presentation.
 
 ## Before any AFP submission
 
-Run the official mandatory linter and resolve its findings; it has not been
-run. Review the exact candidate, metadata, dependency/reuse decisions and
+The official mandatory lint pass is complete; see `LINT.md` for its scope
+and the reviewed default advisories. Review the exact candidate, metadata, dependency/reuse decisions and
 maintainer commitment with the authors. Obtain authorization for submission.
 AFP acceptance remains an editorial and refereeing decision, not a
 consequence of a successful build or an automated review.

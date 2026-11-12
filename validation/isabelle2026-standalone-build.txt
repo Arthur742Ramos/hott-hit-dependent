@@ -26,3 +26,13 @@ Finished HoTT_HIT_Dependent/outline (0:00:10 elapsed time)
 Timing HoTT_HIT_Dependent (2 threads, 106.493s elapsed time, 138.232s cpu time, 12.254s GC time, factor 1.30)
 Finished HoTT_HIT_Dependent (0:01:50 elapsed time, 0:02:22 cpu time, factor 1.29)
 0:02:51 elapsed time, 0:02:22 cpu time, factor 0.83
+
+Post-lint exact final proof/PDF build
+Exit status: 0
+Running HoTT_HIT_Dependent ...
+Preparing HoTT_HIT_Dependent/document ...
+Finished HoTT_HIT_Dependent/document (0:00:11 elapsed time)
+Preparing HoTT_HIT_Dependent/outline ...
+Finished HoTT_HIT_Dependent/outline (0:00:08 elapsed time)
+Finished HoTT_HIT_Dependent (0:00:37 elapsed time, 0:01:02 cpu time, factor 1.66)
+0:01:18 elapsed time, 0:01:02 cpu time, factor 0.80

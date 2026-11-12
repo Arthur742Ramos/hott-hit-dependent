@@ -20,3 +20,11 @@ Finished HoTT_HIT_Dependent/document (0:00:18 elapsed time)
 Timing HoTT_HIT_Dependent (2 threads, 106.295s elapsed time, 145.597s cpu time, 9.129s GC time, factor 1.37)
 Finished HoTT_HIT_Dependent (0:01:51 elapsed time, 0:02:32 cpu time, factor 1.36)
 0:02:39 elapsed time, 0:02:32 cpu time, factor 0.96
+
+Post-lint exact final proof/PDF build
+Exit status: 0
+Running HoTT_HIT_Dependent ...
+Preparing HoTT_HIT_Dependent/document ...
+Finished HoTT_HIT_Dependent/document (0:00:12 elapsed time)
+Finished HoTT_HIT_Dependent (0:00:37 elapsed time, 0:01:03 cpu time, factor 1.68)
+0:01:07 elapsed time, 0:01:03 cpu time, factor 0.93

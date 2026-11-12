@@ -56,8 +56,10 @@ custom prebuilt proof session is required. Check dependency hashes with:
 ```
 
 See [VERIFICATION.md](VERIFICATION.md) for exact checked sources, commands,
-review scope and remaining readiness gates. The official AFP linter has not
-been run. No AFP, journal or registry submission has been performed.
+review scope and remaining readiness gates. The official mandatory lint bundle
+passes with zero findings; the default bundle has 19 independently reviewed
+advisories. See [LINT.md](HoTT_HIT_Dependent/LINT.md). No AFP, journal or registry
+submission has been performed.
 
 The new source uses BSD-3-Clause. The public AFP dependency retains its
 original license and attribution under `vendor/`.
