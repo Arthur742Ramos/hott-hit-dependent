@@ -1,3 +1,5 @@
+Historical pre-external-packaging validation; see isabelle2026-external-afp-build.txt for the current configuration.
+
 Fresh parent and entry build
 Exit status: 0
 Building HoTT_HIT_Metatheory ...

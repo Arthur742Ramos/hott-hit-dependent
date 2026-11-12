@@ -1,5 +1,31 @@
 # Verification record
 
+## Current packaging: external official AFP checkout
+
+The public repository and source ZIP no longer vendor the parent entry.
+Project `ROOTS` lists only `HoTT_HIT_Dependent`; the unchanged session inherits
+`HoTT_HIT_Metatheory` from a separately supplied official AFP checkout.
+`AFP_DEPENDENCY.md` and `AFP_DEPENDENCY_SHA256SUMS` at the public source package root pin
+and verify the dated official `afp-2026-11-12` snapshot. Its complete archive
+SHA256 is `7d1c36b42ce9ba65a0b38f576324038a2d682a44f36f3a8e53ce8a2dc3d97583`.
+
+A fresh isolated Isabelle2026 user configuration rebuilt the official parent
+and all 30 new theories, including the 97-reference oracle audit, both PDFs
+and browser documentation. The full command exited 0. The current sanitized
+receipt is `validation/isabelle2026-external-afp-build.txt` in the public
+source package.
+Mandatory and default linter bundles were rerun against this external-checkout
+configuration: respectively zero findings and 19 reviewed advisory warnings,
+with no errors and exit 0 in both runs. No rules were disabled.
+
+This is packaging and documentation cleanup only: the 33 formal/document files
+and source-set digest below are unchanged. The rebuilt full/outline PDFs retain
+162/102 pages and have identical extracted text, word geometry and font names
+to the previously reviewed documents. Existing PDF deliverables remain valid.
+Prior commits and artifact versions preserve the earlier bundled package;
+its historical build evidence remains below, clearly separated from the
+current external-checkout verification. No previous-entry source was modified.
+
 ## Exact final source, 2026-11-12
 
 - Isabelle2026, distribution source ID `096842708b28`.
@@ -14,8 +40,9 @@
 - Full proof and PDF builds passed with exit status zero against both parents:
   1. Exact monorepo parent sources at commit
      `19e0a78dd218264540a7bc8c3f96fbddc730ffc2`.
-  2. The pinned public AFP dependency documented in `vendor/PROVENANCE.md`
-     of the standalone package.
+  2. The pinned public AFP dependency now documented in `AFP_DEPENDENCY.md`
+     at the public source package root. Earlier runs bundled these exact parent bytes;
+     the current package instead imports them from an external AFP checkout.
 - The initial builds used independently initialized Isabelle user-state
   directories and rebuilt the parent metatheory and the new entry. No prior
   custom session heap supplied the new proofs. PDF inspection then prompted
@@ -29,10 +56,11 @@
 
 ## Reproduction
 
-From the standalone repository root, run:
+Set `AFP` to the root of the separate official AFP checkout described in
+`AFP_DEPENDENCY.md`. From the public source package root, run:
 
 ```sh
-isabelle build -D . -o threads=2 -o document_build=pdflatex \
+isabelle build -d "$AFP/thys" -D . -o threads=2 -o document_build=pdflatex \
   -o document=pdf -o browser_info=true \
   -o "document_variants=document:outline=/proof,/ML" HoTT_HIT_Dependent
 ```
@@ -42,7 +70,8 @@ monorepo configuration, add the parent metatheory directory with `-d` and use
 `-D` on this entry. The two configurations share the same session and theory
 sources. The sanitized build summaries in the standalone `validation/`
 directory distinguish fresh-parent runs, formatting rechecks and the final
-post-lint full builds.
+post-lint full builds. Those earlier summaries are historical evidence. The
+current external-AFP build has its own clearly labeled validation record.
 
 ## Independent review and trust
 

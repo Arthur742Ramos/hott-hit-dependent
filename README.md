@@ -34,26 +34,26 @@ substitution, normalization and decidable equality remain outside this release.
 
 ## Reproduce
 
-Install **Isabelle2026** and LaTeX with pdfLaTeX, then run:
+Install **Isabelle2026** and LaTeX with pdfLaTeX. Obtain a separate official
+AFP checkout matching Isabelle2026, set `AFP` to its root directory, then run:
 
 ```sh
-isabelle build -D . -o threads=2 -o document_build=pdflatex HoTT_HIT_Dependent
+isabelle build -d "$AFP/thys" -D . -o threads=2 \
+  -o document_build=pdflatex HoTT_HIT_Dependent
 ```
 
 For the AFP-style proof-outline document and browser information:
 
 ```sh
-isabelle build -D . -o threads=2 -o document_build=pdflatex \
-  -o browser_info -o document=pdf \
+isabelle build -d "$AFP/thys" -D . -o threads=2 \
+  -o document_build=pdflatex -o browser_info -o document=pdf \
   -o "document_variants=document:outline=/proof,/ML" HoTT_HIT_Dependent
 ```
 
-The exact pinned public dependency is included; no private repository or
-custom prebuilt proof session is required. Check dependency hashes with:
-
-```sh
-(cd vendor && sha256sum -c SHA256SUMS)
-```
+The parent is **not vendored**. [AFP_DEPENDENCY.md](AFP_DEPENDENCY.md) records the
+verified dated official archive, checksum and per-file dependency hashes.
+Keep the AFP checkout outside this repository; no global component registration
+or private repository is required. The project `ROOTS` lists only the new entry.
 
 See [VERIFICATION.md](VERIFICATION.md) for exact checked sources, commands,
 review scope and remaining readiness gates. The official mandatory lint bundle
@@ -61,5 +61,5 @@ passes with zero findings; the default bundle has 19 independently reviewed
 advisories. See [LINT.md](HoTT_HIT_Dependent/LINT.md). No AFP, journal or registry
 submission has been performed.
 
-The new source uses BSD-3-Clause. The public AFP dependency retains its
-original license and attribution under `vendor/`.
+The new source uses BSD-3-Clause. The external AFP dependency retains its
+original license and attribution in the separately obtained AFP checkout.

@@ -87,10 +87,12 @@ after future source changes. Remaining gates are:
    contacting editors. The repository draft's readiness/merge decision remains
    separate from this preparation work.
 
-The reproducibility ZIP contains the pinned public dependency. An eventual
-AFP upload should contain only the new entry's allowed source files in a
-single `HoTT_HIT_Dependent/` top-level directory and import the already
-published dependency, not submit its vendored copy as part of the new entry.
+The reproducibility ZIP does not contain the parent entry. It imports the
+already-published dependency from a separate official AFP checkout; the
+repository-level dependency note and checksum list pin the tested snapshot.
+An eventual AFP upload should still contain only the new entry's allowed
+source files in one `HoTT_HIT_Dependent/` top-level directory, not repository
+validation records or a copy of AFP.
 
 No AFP upload, draft creation, editor notification, journal submission or
 registry submission has been performed.

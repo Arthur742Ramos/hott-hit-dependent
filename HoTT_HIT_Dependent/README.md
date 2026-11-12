@@ -126,10 +126,11 @@ specified equations is not inferred automatically.
 
 ## Build and verification
 
-Target: **Isabelle2026**. Supply the pinned public `HoTT_HIT_Metatheory` session:
+Target: **Isabelle2026**. Supply the published `HoTT_HIT_Metatheory` session
+from a separate official AFP checkout. Set `AFP` to that checkout root:
 
 ```sh
-isabelle build -d /path/to/HoTT_HIT_Metatheory -D . \
+isabelle build -d "$AFP/thys" -D . \
   -o threads=2 -o document_build=pdflatex HoTT_HIT_Dependent
 ```
 

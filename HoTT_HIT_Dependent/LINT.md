@@ -13,7 +13,9 @@ Isabelle2026 was used throughout. The exact final formal/document source-set
 SHA256 is `bbe74d0f6c3d17973d7e9913309989c39e42c082f4d330cfb3271f11f2a6ee20`. Both runs processed all **30 proper theories** of
 `HoTT_HIT_Dependent`; no missing-theory diagnostic was present. The parent
 metatheory was built as a dependency, not included in these lint counts.
-No rules were disabled and no source suppressions were added.
+No rules were disabled and no source suppressions were added. Both bundles
+were rerun successfully with the parent supplied by the separate official
+`afp-2026-11-12` checkout after removal of the vendored copy.
 
 ## Results
 
@@ -55,13 +57,14 @@ review, not external human peer review.
 ## Reproduce
 
 Register the official release's `linter_base` component in an isolated user
-configuration, then run from the standalone repository root:
+configuration, set `AFP` to the separate official AFP checkout root, then run
+from the public source package root:
 
 ```sh
-isabelle lint -d . -o threads=2 -o document_build=pdflatex \
+isabelle lint -d "$AFP/thys" -d . -o threads=2 -o document_build=pdflatex \
   -o lint_bundles=afp_mandatory -f error -r json -O mandatory.json \
   HoTT_HIT_Dependent
-isabelle lint -d . -o threads=2 -o document_build=pdflatex \
+isabelle lint -d "$AFP/thys" -d . -o threads=2 -o document_build=pdflatex \
   -o lint_bundles=default -f error -r json -O advisory.json \
   HoTT_HIT_Dependent
 ```

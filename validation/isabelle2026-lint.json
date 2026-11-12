@@ -191,5 +191,12 @@
         }
       ]
     }
-  ]
+  ],
+  "dependency_configuration": {
+    "kind": "external_official_afp_checkout",
+    "snapshot": "afp-2026-11-12",
+    "archive_sha256": "7d1c36b42ce9ba65a0b38f576324038a2d682a44f36f3a8e53ce8a2dc3d97583",
+    "mandatory_rerun_exit": 0,
+    "default_rerun_exit": 0
+  }
 }
