@@ -1,3 +1,5 @@
+HISTORICAL: pre-review source, not the current manifest.
+
 Current minimal32-file stage; same manifest3b406539212fa7901f2a545f40a55e16a54194abdaa718378fe9beafc32b722e.
 Isabelle2026 externalAFP; fullproof/document; exit0.
 

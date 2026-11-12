@@ -1,12 +1,12 @@
 {
   "format": "SHA256 of formal and document sources",
-  "source_set_sha256": "3b406539212fa7901f2a545f40a55e16a54194abdaa718378fe9beafc32b722e",
+  "source_set_sha256": "6142e1b991c51ecab3387f3fe99328e1914c02a8e5f1a5c8cd4a6209913b10df",
   "source_set_encoding": "UTF-8 JSON of the files mapping with sorted keys and separators comma/colon, no whitespace",
   "files": {
     "DHIT_Admissible_Paths.thy": "4e5f288f6e204c1177b7ff277508f22b2ea5839b53d01c839fae19d5b71fd2eb",
     "DHIT_Affine_Model.thy": "3b92ffd9d8f7ba7c948e8574ff81e68e18f1a7dac3289cb95de70d2d7701b8fd",
     "DHIT_Argument_Graph.thy": "c49125590aae119c8300e7e360c30b01737d0bc2a49ffb6f8316cc8c07946332",
-    "DHIT_Audit.thy": "d4b4be76f3c1b92fa75b00836fc575bb294b740361bb1959403dbf66248697c7",
+    "DHIT_Audit.thy": "523a98277ff9905537b85ec9db2b998169b88046a3fc06e450d526a9341cbe1b",
     "DHIT_Coherence_From_Local.thy": "5a8c47b65cc6ec277eb4400fbe82d05189c9b06ea737ca3ec87332f63e5c8f08",
     "DHIT_Coherent_Signature.thy": "b97e622094e2d29646344ad390617f12676ca580f2f916d762e1f4b4e30d1bf5",
     "DHIT_Constructor_Congruence.thy": "5c8bd1c07b4b61ec64348b27017c423b141f47eb6244f0d7f88afddd95619602",
@@ -24,6 +24,7 @@
     "DHIT_Parameter_Congruence.thy": "9b4a94fad61770cab785508b7c18ac351bab5377c084ffc6e89236298310e1a7",
     "DHIT_Parameter_Substitution.thy": "f624fa6fd07c224442d28ea038987f423b7fbbd1f24d4296c26c535b453f0446",
     "DHIT_Path_Quotient.thy": "f7bec9c237d9ee64fc63cd31a76ddf6916235775748a0d1102586a5a731ee230",
+    "DHIT_Path_Sensitive_Example.thy": "30e1b736113ae9dbe77089adc6fd41088b1b1cabc459a944654fc71b499f67ee",
     "DHIT_Paths.thy": "b3c12c851fd8c4f72a1a9fd5fd29245b778a5144708ec919963ceaf6020b597b",
     "DHIT_Quotient_Functor.thy": "e55df5e34822caec7ab25836b781a6ca911d1236831ec3bfdc0e7f170076f9d0",
     "DHIT_Reindexing.thy": "ef4f003dd8a4369f9e61d8cf012d9f2895491d3e9bfe1b7f2b98d756928d0ac4",
@@ -31,8 +32,8 @@
     "DHIT_Signed_Interchange.thy": "c8e1f0295cb8c02be2b2d58ffc49c4f2469a9bef8f3aa3c97418247768e08538",
     "DHIT_Syntax_Bridge.thy": "7d86f8d699d4fb59a5d35f30eaeb6e3c345a939e8c741b481d98056d222b58c7",
     "DHIT_Type_Formers.thy": "9c140b360eecb3d540979be9850e848725dbdd08822c9568641e237286f7ccd0",
-    "ROOT": "43387039527db33aaea70b141395b0a0719bc9dfbd4eb242af8fda1fbdf80ba6",
+    "ROOT": "ef1bdf71a3054a5cfa6ff511d72ae4dcf59978852d9b9b28b8dca687c13d04fd",
     "document/root.bib": "a666b35e9cf31b3f3a44bbd920fca4719c7adeb7d00feea0b7357e4d513692f1",
-    "document/root.tex": "f78a12c1d05a414f39a3510d89bbaf04c7164705428cf43aa292e3c48d213431"
+    "document/root.tex": "bd2b7c618a91cc61cd63fe07104f43c785883ea8d07c1f8134e12514096ed853"
   }
 }

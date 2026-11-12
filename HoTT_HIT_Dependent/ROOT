@@ -30,6 +30,7 @@ session HoTT_HIT_Dependent (AFP) = HoTT_HIT_Metatheory +
     DHIT_Coherence_From_Local
     DHIT_Affine_Model
     DHIT_Interchange_Examples
+    DHIT_Path_Sensitive_Example
     DHIT_Audit
   document_files
     "root.tex"

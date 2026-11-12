@@ -1,3 +1,5 @@
+HISTORICAL: pre-review source, not the current manifest.
+
 Current consolidated source: 3b406539212fa7901f2a545f40a55e16a54194abdaa718378fe9beafc32b722e
 Isabelle2026; external official afp-2026-11-12; cached verified parent.
 Full proof, document/outline and browser build; exit0.

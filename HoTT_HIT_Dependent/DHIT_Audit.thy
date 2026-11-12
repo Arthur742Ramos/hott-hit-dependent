@@ -1,13 +1,24 @@
 theory DHIT_Audit
   imports DHIT_Type_Formers DHIT_Sections DHIT_Displayed_Substitution
-    DHIT_Affine_Model DHIT_Interchange_Examples DHIT_Coherence_From_Local
+    DHIT_Affine_Model DHIT_Interchange_Examples DHIT_Path_Sensitive_Example
 begin
 
 section \<open>Proof-dependency audit\<close>
 
 text \<open>The following check rejects oracle dependencies in the selected
 headline results. It is an audit of existing proofs, not a proof-producing
-extension. Locale assumptions remain explicit hypotheses of their theorems.\<close>
+extension. The principal equivalence is
+@{thm [source] local_global_signature_coherence}; its constructed-fold consequence
+is @{thm [source] locally_natural_signature_family.constructed_coherent_elimination}.
+The list also explicitly includes all-fiber descent, representative-independent
+quotient transport, and both successful and separating model results.
+
+The Isabelle library operation traverses the selected theorems' transitive
+proof dependencies and collects their recorded oracles. This is not an audit
+of every theorem or of every logical axiom. In particular, ordinary HOL
+foundations and choice remain in use, and locale assumptions remain explicit
+hypotheses. The ML block only inspects existing theorem values and raises an
+error on an unexpected oracle; it creates no theorem, axiom, or oracle.\<close>
 
 ML \<open>
   val dependent_headlines =
@@ -68,6 +79,9 @@ ML \<open>
      @{thm contextual_parameter_algebra_substitution},
      @{thm path_presentation.qcompose_associative},
      @{thm path_presentation.qinverse_right},
+     @{thm quotient_family.presented_transport},
+     @{thm quotient_family.quotient_transport_class},
+     @{thm quotient_family.quotient_transport_member},
      @{thm quotient_family.quotient_transport_bijective},
      @{thm quotient_family.quotient_transport_composition},
      @{thm quotient_family.quotient_transport_inverse},
@@ -107,7 +121,18 @@ ML \<open>
      @{thm vector_binary_square_all_values},
      @{thm vector_constructed_section_and_square},
      @{thm binary_square_not_cancellation_equal},
-     @{thm bad_context_not_relation_compatible}];
+     @{thm bad_context_not_relation_compatible},
+     @{thm twist_coherent_model},
+     @{thm twist_loop_typed},
+     @{thm twist_loop_action},
+     @{thm twist_loop_not_trivial},
+     @{thm twist_recursive_naturality_cell},
+     @{thm twist_recursive_naturality_action(1)},
+     @{thm twist_recursive_naturality_action(2)},
+     @{thm twist_binary_interchange_cell},
+     @{thm twist_binary_interchange_action(1)},
+     @{thm twist_binary_interchange_action(2)},
+     @{thm twist_binary_distinct_nonidentity}];
   val _ = if null (Thm_Deps.all_oracles dependent_headlines) then ()
     else error "Unexpected proof oracle in dependent-family headline results";
 \<close>

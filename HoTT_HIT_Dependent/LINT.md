@@ -10,7 +10,7 @@ not changed. Version: **Isabelle2026-v1.0.0**, commit
 Every downloaded source blob was checked against that official Git tree.
 
 Isabelle2026 was used throughout. The exact final formal/document source-set
-SHA256 is `3b406539212fa7901f2a545f40a55e16a54194abdaa718378fe9beafc32b722e`. Both runs processed all **28 proper theories** of
+SHA256 is `6142e1b991c51ecab3387f3fe99328e1914c02a8e5f1a5c8cd4a6209913b10df`. Both runs processed all **29 proper theories** of
 `HoTT_HIT_Dependent`; no missing-theory diagnostic was present. The parent
 metatheory was built as a dependency, not included in these lint counts.
 No rules were disabled and no source suppressions were added. Both bundles
@@ -54,6 +54,9 @@ advisories concern terminal metis/linear-arithmetic closers with explicit fiber,
 typing or coordinate hypotheses. Independent review retained these checked
 proofs rather than adding scaffolding solely to reach zero nonmandatory warnings.
 This is an automated review, not external human peer review.
+
+The added path-sensitive example introduces no new lint findings. Both bundles
+were rerun on the exact 29-theory review response.
 
 ## Reproduce
 

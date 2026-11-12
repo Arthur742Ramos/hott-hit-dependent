@@ -2,8 +2,8 @@
   "tool": "official Isabelle linter",
   "version": "Isabelle2026-v1.0.0",
   "commit": "146d9fc0bbd304dd6f15fdb607331f7d81e92723",
-  "source_set_sha256": "3b406539212fa7901f2a545f40a55e16a54194abdaa718378fe9beafc32b722e",
-  "proper_theories": 28,
+  "source_set_sha256": "6142e1b991c51ecab3387f3fe99328e1914c02a8e5f1a5c8cd4a6209913b10df",
+  "proper_theories": 29,
   "mandatory": {
     "findings": 0,
     "exit_code": 0
@@ -73,10 +73,5 @@
       "stopPosition": "64:60"
     }
   ],
-  "previous_release": {
-    "proper_theories": 30,
-    "mandatory_findings": 0,
-    "default_warnings": 19
-  },
   "dependency": "external official afp-2026-11-12"
 }

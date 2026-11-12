@@ -8,7 +8,10 @@ from explicit interchange laws. The constructed fold descends to the combined
 quotient under uniform contextual displayed-method laws. See `VERIFICATION.md`
 for the exact checked snapshot, not just the existence of a theorem filename.
 
-## Next targets, in order
+## Next research targets, in order
+
+These are extensions beyond the proved scope, not missing obligations in the
+current theorems or prerequisites imposed on this scoped AFP candidate.
 
 1. **Quotient-level substitution.** Extend the existing whole-algebra pullback
    to prove that substitution preserves the new interchange/naturality

@@ -64,7 +64,7 @@ manual review is not an official linter pass.
   that arithmetic requirement.
 - One intended AFP session and its PDF, with correct ROOT/document layout.
 - Appropriate primary citations and complete, correctly rendered references.
-- Official `afp_mandatory` lint now passes all 28 theories with zero findings.
+- Official `afp_mandatory` lint now passes all 29 theories with zero findings.
   The default bundle reports 8 independently reviewed advisories, not errors.
   See `LINT.md` for the pinned official release, rules and exact source scope.
   This does not certify every guideline or editorial requirement.
@@ -73,6 +73,24 @@ A keyword scan should distinguish actual proof commands from discussion in
 comments or documentation. It cannot validate generated instantiations,
 attribute discipline, indentation, mathematical scope or proof robustness.
 The exact tool and rule sets are recorded in `LINT.md`.
+
+## Review response completed
+
+- The proof document now introduces the informal principal theorem, elementary
+  and tuple naturality, shared sufficient interchange laws, and practical use.
+- `DEPENDENCY_AUDIT.md` identifies the exact principal equivalence, quotient
+  descent, representative-independence and example facts. The sole ML block
+  inspects transitive proof-oracle dependencies; it does not produce proofs or
+  enumerate all logical axioms.
+- A focused combined sign-flip example supplies genuine path-sensitive recursive
+  naturality and binary interchange, with a valid nonidentity loop. Constant
+  fibers, identical involutive slot actions, and the absence of faithfulness or
+  a displayed-fold instance are explicit.
+- Full Isabelle2026 proof/document/browser and minimal archive builds pass
+  against the external official AFP snapshot. Mandatory lint remains clean;
+  the eight previously reviewed default advisories are unchanged.
+- Weakening total-function independence, full universal properties and
+  normalization are not prerequisites imposed on this accurately scoped entry.
 
 ## Remaining submission gates
 

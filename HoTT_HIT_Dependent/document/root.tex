@@ -25,6 +25,87 @@ The result is an external dependent semantic layer, not a dependent object
 calculus or a general model of higher inductive types.
 \end{abstract}
 
+\section{Main theorem: from elementary squares to coherent transport}
+
+A path constructor is a family of generating paths
+\(\ell_{\vec x}:L(\vec x)\longrightarrow R(\vec x)\), where its two
+endpoints are expressions in the imported signature. A dependent family
+assigns a set \(F(t)\) to each base term and mutually inverse transport maps
+to each admitted generating edge. The question is whether this transport
+respects the equations imposed on paths, for \emph{every} value in the source
+fiber, rather than only for the values of one chosen section.
+
+\paragraph{The common hypotheses.}
+Fix a well-formed original signature, external parameter carriers and the
+admitted constructor-tree grammar. Same-sort parameters are excluded in this
+fragment; external parameters remain fixed during argument motion. Constructor
+contexts may contain a recursive hole, and a valid outer \emph{shell} is such
+a context surrounding a path. Assume the sufficient interchange interface:
+action in either of two distinct recursive slots is unchanged, as a total HOL
+function, when the other slot changes its endpoint; the two initial slot
+actions commute on every value of the appropriate fiber. These laws hold
+uniformly under every valid outer shell. They are strong sufficient
+hypotheses, not a characterization of all possible dependent families.
+
+\paragraph{Two naturality conditions.}
+An \emph{elementary move} changes one recursive argument along one positive
+admitted contextual edge, leaving the other arguments fixed.
+\emph{Elementary naturality} requires its square with each path constructor
+to commute under every valid shell and on every source-fiber value. The
+admitted edge may already lie inside a constructor context: elementary does
+not mean only an unwrapped original generator.
+
+A \emph{tuple motion} instead assigns an arbitrary finite signed path to each
+recursive argument. Original endpoint expressions act on these paths to give
+\(L(\alpha)\) and \(R(\alpha)\). \emph{Tuple naturality} requires the two
+parallel composite paths
+\[
+ L(\alpha)\,;\,\ell_{\vec y}
+ \qquad\hbox{and}\qquad
+ \ell_{\vec x}\,;\,R(\alpha)
+\]
+to induce the same transport, again on every source-fiber value and under
+every valid shell. Here a semicolon means traversal of the left path followed
+by the right path.
+
+\paragraph{Informal main theorem.}
+\emph{Under the common hypotheses above, elementary naturality is equivalent
+to tuple naturality.} The exact exported Isabelle theorem is
+\texttt{local\_global\_signature\_coherence}; it is stated outside a locale
+as the equivalence of \texttt{locally\_natural\_signature\_family} and
+\texttt{coherent\_signature\_family}. Both predicates include the same
+signature, admitted-family and sufficient interchange requirements. Thus the
+equivalence does not erase those requirements. Its substantive direction
+extends elementary squares along signed paths, serializes tuple motions, and
+uses proved endpoint functoriality and interchange to compare the two endpoint
+actions. The reverse direction specializes a tuple motion to one elementary
+move.
+
+\paragraph{Why this is useful.}
+To obtain an action of the combined interchange/naturality quotient, one can
+verify elementary naturality rather than separately prove compatibility for
+every tuple of composite and reversed argument paths. This reduces the form
+of the obligations, not their quantification: all valid shells and all fiber
+values still matter, and no finite or decidable checking procedure is claimed.
+The derived quotient transport is independent of the representative of an
+endpoint-indexed path class.
+
+A separate contextual displayed algebra supplies typed point methods,
+base-generator boundary coherence for the recursively defined fold, and
+uniform contextual method naturality for arbitrary correctly typed recursive
+results. Earlier displayed-HIT boundary methods provide one sufficient way
+to establish the base-generator condition. The point methods recursively
+define a fold \(f\); the construction does not assume a global section. If \([p]:x\longrightarrow y\)
+is in the corresponding quotient hom set and \(x\) is in the admitted tree
+grammar, \texttt{constructed\_coherent\_elimination} proves
+\[
+ \operatorname{transport}_{[p]}(f(x))=f(y)
+ \qquad\hbox{and}\qquad f(y)\in F(y).
+\]
+This is the constructed-fold consequence of the main coherence result, not
+a general dependent object-language eliminator or a typed HIT universal
+property. The following sections explain its interfaces and limitations.
+
 \section{Scope and relationship to the imported calculus}
 The published metatheory~\cite{HITMetatheory} has nondependent function spaces
 and constant-motive eliminators. We import its actual signatures, syntax,
@@ -121,6 +202,33 @@ the recursively constructed fold descends to this combined coherence
 quotient. The theorem includes typing of its value at the target and retains
 the constructor-grammar premise at the source. It assumes no pre-existing
 global section.
+
+\section{A combined path-sensitive test model}
+
+The theory \texttt{DHIT\_Path\_Sensitive\_Example} uses one original signature
+with a base point \(z\), a unary constructor \(u\), a binary constructor \(b\),
+a recursive path constructor \(r(x):u(x)\longrightarrow x\), and a nullary
+loop \(\ell:z\longrightarrow z\). Every fiber is the set of integers.
+Transport along the loop negates the integer, while transport along a collapse
+generator is the identity. Constructor contexts preserve this underlying
+generator action.
+
+The interpretation satisfies the full local naturality interface and hence
+the combined coherence interface. In particular, the recursive naturality
+square compares \(u(\ell);r(z)\) with \(r(z);\ell\); both act by negation.
+In the binary constructor \(b(z,z)\), the loop in the left slot and the loop
+in the right slot may be traversed in either order. These are distinct path
+words with nonidentity individual actions, and both composites act identically
+on every integer. Thus the same model exercises recursive-generator
+naturality and two-slot interchange.
+
+This example is not endpoint-determined: \(\ell\) and the empty path have
+the same endpoints but act differently on \(1\). All-fiber quotient descent
+therefore proves that they cannot be equal in the combined path presentation.
+The fibers here are constant, the two slot actions are the same commuting
+involution, and their two-step action is the identity. No faithfulness of the
+entire presentation or displayed-fold interpretation of this particular model
+is claimed; the earlier examples provide the constructed-fold instances.
 
 \section{Relationship to prior work}
 Transported families, displayed algebras and dependent elimination are

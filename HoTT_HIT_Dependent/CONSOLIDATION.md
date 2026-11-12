@@ -7,7 +7,7 @@ It is not a rewrite of the previously accepted parent entry.
 
 ## Coherent modules, not a minimum file count
 
-The entry now has 28 theories instead of 30:
+The consolidation reduced the entry from 30 theories to 28:
 
 - `DHIT_Dependent_Transport` is consolidated into `DHIT_Type_Formers`.
   Transport in the second-indexed family belongs with the dependent sum and
@@ -15,6 +15,10 @@ The entry now has 28 theories instead of 30:
 - `DHIT_Argument_Projection` is consolidated into `DHIT_Argument_Graph`.
   Exact coordinate recovery belongs with the elementary serialization it
   analyzes. A separate section marks the projection interface.
+
+A later focused review response adds the substantive combined path-sensitive
+example as one separate theory, bringing the current total to 29. It is not an
+auxiliary fragment split out merely for proof-task convenience.
 
 Import the destination theory in place of either removed theory. Locale-qualified
 facts such as `dependent_graph_family.dependent_transport_type` retain their

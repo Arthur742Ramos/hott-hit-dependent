@@ -20,11 +20,14 @@ signature, term, endpoint and substitution imports.
 - Descent of the recursively constructed fold to that combined quotient,
   assuming the uniform contextual displayed-method laws, not a supplied
   global section.
+- A combined sign-flip model with recursive-generator naturality, binary
+  interchange, and a valid loop proved nonidentity in the combined presentation.
 - Infinite varying-fiber examples and a finite counterexample showing that
   coherence of one section does not imply all-fiber interchange.
 
 Read [the entry README](HoTT_HIT_Dependent/README.md),
-[trust and scope](HoTT_HIT_Dependent/TRUST_AND_SCOPE.md), and
+[trust and scope](HoTT_HIT_Dependent/TRUST_AND_SCOPE.md),
+[explicit dependency audit](HoTT_HIT_Dependent/DEPENDENCY_AUDIT.md), and
 [AFP preparation assessment](HoTT_HIT_Dependent/AFP_PREPARATION.md).
 This is a set-valued semantic extension, not a new dependent object calculus
 or a general model of HITs. The interchange hypotheses are sufficient, not

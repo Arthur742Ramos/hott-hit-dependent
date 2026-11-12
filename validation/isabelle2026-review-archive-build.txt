@@ -1,0 +1,17 @@
+Current review source: 6142e1b991c51ecab3387f3fe99328e1914c02a8e5f1a5c8cd4a6209913b10df
+Isabelle2026; external official AFP; full proof/document build, exit0.
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session AFP/HoTT_HIT_Metatheory (AFP)
+Session AFP/HoTT_HIT_Dependent (AFP)
+Running HoTT_HIT_Dependent ...
+Preparing HoTT_HIT_Dependent/document ...
+Finished HoTT_HIT_Dependent/document (0:00:11 elapsed time)
+Preparing HoTT_HIT_Dependent/outline ...
+Finished HoTT_HIT_Dependent/outline (0:00:09 elapsed time)
+Timing HoTT_HIT_Dependent (2 threads, 30.571s elapsed time, 55.634s cpu time, 5.870s GC time, factor 1.82)
+Finished HoTT_HIT_Dependent (0:00:33 elapsed time, 0:00:58 cpu time, factor 1.74)
+Finished at Thu Nov 12 18:37:45 GMT-3 2026
+0:01:03 elapsed time, 0:00:58 cpu time, factor 0.92

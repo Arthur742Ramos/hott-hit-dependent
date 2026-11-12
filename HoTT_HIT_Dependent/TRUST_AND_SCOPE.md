@@ -19,6 +19,10 @@ boundaries, contextual naturality and additional path-equation compatibility.
 A conditional theorem does not establish that every signature or every choice
 of methods satisfies those laws.
 
+See `DEPENDENCY_AUDIT.md` for the exact principal facts and the transitive
+coverage and limits of `Thm_Deps.all_oracles`. The selected-fact audit is not an
+axiom inventory or an enumeration of every theorem.
+
 ## Total HOL operations and their domains
 
 `undefined` has two intentional roles: structural folds outside their proved
