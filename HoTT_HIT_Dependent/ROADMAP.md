@@ -1,32 +1,46 @@
-# Mathematical continuation
+# Established scope and next mathematical targets
 
-This entry is a verified milestone, not completion of a general dependent HIT
-theory. The following targets remain unproved here.
+This release constructs dependent folds over the imported recursive and mixed
+external-parameter syntax, proves whole displayed/contextual algebra
+substitution, constructs indexed path quotients with all-fiber transport,
+and derives endpoint functoriality and local-to-global canonical naturality
+from explicit interchange laws. The constructed fold descends to the combined
+quotient under uniform contextual displayed-method laws. See `VERIFICATION.md`
+for the exact checked snapshot, not just the existence of a theorem filename.
 
-1. **Path equations beyond free contextual cancellation.** Specify the
-   functoriality and interchange equations for multiple recursive argument
-   slots, then prove the supplied transport and displayed methods respect
-   them. Do not identify the current free contextual-edge presentation with
-   that stronger quotient without this proof.
-2. **Varying external parameters.** Add parameter-path data and coherence,
-   rather than treating opaque parameters as fixed along contextual paths.
-   A same-sort `Par h` additionally needs a supplied dependent section or a
-   revised signature discipline.
-3. **Whole displayed-HIT substitution package.** The constructed point fold,
-   endpoint interpretation, parameter carriers and displayed point algebras
-   already have substitution theorems; graph families already reindex.
-   Assemble the corresponding path-method and contextual-naturality
-   pullback laws into a single displayed-HIT-algebra substitution theorem.
-4. **Object-language dependent calculus.** Define dependent motives and
-   Pi/Sigma types in syntax, context extension, capture-avoiding substitution
-   and conversion, then prove typing substitution and subject reduction for
-   that calculus. The present semantic Pi/Sigma families are not a substitute
-   for those syntactic metatheorems.
-5. **Normalization and higher structure.** Only after the new calculus is
-   fixed, develop an appropriate normalization argument. General
-   groupoid-valued motives, higher paths, universes, univalence and Kan
-   operations need additional definitions and coherence, not renamed old
-   nondependent theorems.
+## Next targets, in order
 
-These are research tasks and proof obligations, not promises of an already
-established full HIT model or claims of novelty over the cited literature.
+1. **Quotient-level substitution.** Extend the existing whole-algebra pullback
+   to prove that substitution preserves the new interchange/naturality
+   presentation and its quotient action. This is not already implied by the
+   current substitution theorem.
+2. **Typed universal property.** Restrict objects to the constructor grammar,
+   define the appropriate algebras and morphisms, and prove the intended
+   universal property. Structural fold uniqueness is not homotopy-initiality.
+   Assess an endpoint-tagged Category3 or Catoids wrapper rather than claiming
+   category-library interoperability without an interpretation.
+3. **Weaker coherence hypotheses.** Replace total-function slot independence
+   by suitably fiber-restricted laws where possible, preserving contextual
+   stability of imposed equations. Current hypotheses are sufficient, not a
+   necessary characterization of all coherent motives.
+4. **Varying parameters and richer signatures.** Add parameter-path actions.
+   Same-sort `Par h` requires a supplied section or a different discipline;
+   current argument admissibility excludes those instances.
+5. **Separate dependent object calculus.** Specify dependent contexts,
+   binders, substitution, conversion and computation, then prove its typing
+   and subject-reduction results. This semantic development does not itself
+   extend the imported nondependent object language.
+6. **Higher semantics.** Groupoid-valued motives, higher cells, universes,
+   univalence and Kan operations require additional coherence definitions.
+
+Normalization and decidable equality are outside this expansion. The existing
+inverse-cancellation measure and old nondependent calculus do not establish
+either property for the enlarged presentation.
+
+## Before any AFP submission
+
+Run the official mandatory linter and resolve its findings; it has not been
+run. Review the exact candidate, metadata, dependency/reuse decisions and
+maintainer commitment with the authors. Obtain authorization for submission.
+AFP acceptance remains an editorial and refereeing decision, not a
+consequence of a successful build or an automated review.

@@ -1,6 +1,8 @@
 theory DHIT_Audit
   imports DHIT_Syntax_Bridge DHIT_Dependent_Transport DHIT_Sections DHIT_Displayed_Algebra
     DHIT_Parameter_Algebra DHIT_Parameter_Substitution DHIT_Constructor_Congruence DHIT_Parameter_Congruence
+    DHIT_Displayed_Substitution DHIT_Quotient_Functor DHIT_Signed_Interchange
+    DHIT_Argument_Graph DHIT_Affine_Model DHIT_Interchange_Examples DHIT_Local_Naturality DHIT_Argument_Projection DHIT_Coherence_From_Local
 begin
 
 section \<open>Proof-dependency audit\<close>
@@ -63,7 +65,51 @@ ML \<open>
      @{thm graph_family_on_UNIV},
      @{thm equality_on_UNIV},
      @{thm twisted_loop_has_no_section},
-     @{thm shifted_interval_section}];
+     @{thm shifted_interval_section},
+     @{thm parameter_hit_algebra_substitution},
+     @{thm contextual_parameter_algebra_substitution},
+     @{thm path_presentation.qcompose_associative},
+     @{thm path_presentation.qinverse_right},
+     @{thm quotient_family.quotient_transport_bijective},
+     @{thm quotient_family.quotient_transport_composition},
+     @{thm quotient_family.quotient_transport_inverse},
+     @{thm presented_path_map.map_hom_composition},
+     @{thm presented_path_map.map_hom_inverse},
+     @{thm contextual_parameter_algebra.constructed_section_quotient_descent},
+     @{thm mixed_context_graph.constructor_preserves_composition},
+     @{thm mixed_context_graph.constructor_preserves_inverse},
+     @{thm mixed_context_graph.two_path_interchange},
+     @{thm interchange_family.all_fiber_interchange_descent},
+     @{thm interchange_family.arbitrary_path_transport_interchange},
+     @{thm path_natural_family.path_naturality},
+     @{thm parameter_path_structure.endpoint_motion_typed},
+     @{thm signature_path_structure.original_endpoint_paths(1)},
+     @{thm signature_path_structure.original_endpoint_paths(2)},
+     @{thm parameter_path_structure.argument_motion_serialization},
+     @{thm parameter_path_structure.elementary_endpoint_interpretation},
+     @{thm serialize_coordinates_recover},
+     @{thm endpoint_functor.constructor_motion_compose},
+     @{thm endpoint_functor.constructor_motion_cong},
+     @{thm endpoint_functor.endpoint_motion_identity},
+     @{thm endpoint_functor.endpoint_motion_compose},
+     @{thm endpoint_functor.endpoint_motion_cong},
+     @{thm endpoint_functor.endpoint_motion_inverse},
+     @{thm endpoint_functor.endpoint_image_projected},
+     @{thm endpoint_functor.endpoint_motion_serialization},
+     @{thm signature_path_structure.presented_coherence_lifting},
+     @{thm coherent_signature_family.all_fiber_coherent_descent},
+     @{thm locally_natural_signature_family.argument_graph_naturality},
+     @{thm locally_natural_signature_family.serialized_argument_naturality},
+     @{thm local_global_signature_coherence},
+     @{thm locally_natural_signature_family.constructed_coherent_elimination},
+     @{thm affine_graph.transport_formula},
+     @{thm affine_graph.arbitrary_presentation},
+     @{thm recursive_generator_naturality_presented},
+     @{thm recursive_naturality_all_residuals},
+     @{thm vector_binary_square_all_values},
+     @{thm vector_constructed_section_and_square},
+     @{thm binary_square_not_cancellation_equal},
+     @{thm bad_context_not_relation_compatible}];
   val _ = if null (Thm_Deps.all_oracles dependent_headlines) then ()
     else error "Unexpected proof oracle in dependent-family headline results";
 \<close>

@@ -366,11 +366,11 @@ interpretation collapse: displayed_hit_algebra collapse_signature 0
   "\<lambda>u. {point_count u}" "\<lambda>k xs ys. Suc (sum_list ys)"
   "\<lambda>n::nat. 0" "\<lambda>n. [numeral_tree n]"
   "\<lambda>_ n. n - 1" "\<lambda>_. Suc"
-  apply unfold_locales
-  apply (rule displayed_point_algebra.method_type[OF point_count_algebra]; assumption)
-  using collapse_signature_wf numeral_point_tree
-  by (auto simp: lhsOf_def rhsOf_def collapse_signature_def
-      recursive_hit_computation less_Suc_eq)
+  by (unfold_locales,
+      (rule displayed_point_algebra.method_type[OF point_count_algebra]; assumption),
+      insert collapse_signature_wf numeral_point_tree,
+      auto simp: lhsOf_def rhsOf_def collapse_signature_def
+        recursive_hit_computation less_Suc_eq)
 
 lemma recursive_hit_path_computation:
   "collapse.transport [Pos n]

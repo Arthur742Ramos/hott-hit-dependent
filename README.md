@@ -1,52 +1,63 @@
-# Dependent families and displayed algebras for structural HIT syntax
+# Dependent families and coherent displayed algebras for structural HIT syntax
 
-Verified Isabelle2026 source by **Arthur Freitas Ramos, David Barros Hulak,
-and Ruy de Queiroz**. This is a new mathematical extension of their published
-`HoTT_HIT_Metatheory`, not an executable-checker continuation.
+Isabelle2026 source by **Arthur Freitas Ramos, David Barros Hulak, and Ruy de
+Queiroz**, extending their published `HoTT_HIT_Metatheory` through actual
+signature, term, endpoint and substitution imports.
 
-## Main results
+## Main mathematical results
 
-- Constructed dependent folds on original point-constructor trees, first for
-  recursive signatures and then for mixed external `Par`/`Rec` arities.
-- Point computation and uniqueness; typed interpretation of original endpoint
-  expressions; uniform boundary-method obligations for arbitrary typed IHs.
-- Actual term-substitution naturality of the constructed fold and displayed
-  algebras, with explicit substitution images of opaque parameter carriers
-  and pulled-back methods.
-- Constructor-path induction through recursive slots of both fragments,
-  including admitted path/equality lifting and transport coherence.
-- Varying set-valued fibers, dependent sums/products, inverse transport and
-  dependent cancellation preservation, and a monodromy classification of
-  connected dependent sections.
-- Nontrivial recursive and list-deletion examples, with different endpoint
-  fibers and nonidentity transport; a twisted Boolean loop has no section.
+- Constructed dependent folds for recursive and mixed external `Par`/`Rec`
+  grammars, with point computation, uniqueness, endpoint interpretation and
+  whole displayed/contextual algebra substitution.
+- Actual indexed path quotients, lawful identity/composition/inverse and
+  representative-independent transport on every fiber element.
+- Constructor and original endpoint functoriality modulo interchange,
+  including arbitrary signed path grids and elementary serialization.
+- **Local-to-global coherence:** within the stated sufficient all-fiber
+  interchange interface, positive single-recursive-slot naturality is
+  equivalent to compatibility with all canonical tuple naturality cells,
+  uniformly under valid outer constructor contexts.
+- Descent of the recursively constructed fold to that combined quotient,
+  assuming the uniform contextual displayed-method laws, not a supplied
+  global section.
+- Infinite varying-fiber examples and a finite counterexample showing that
+  coherence of one section does not imply all-fiber interchange.
 
-Read [the entry README](HoTT_HIT_Dependent/README.md) and
-[trust/scope statement](HoTT_HIT_Dependent/TRUST_AND_SCOPE.md) for exact limits.
-This is a set-valued dependent semantic layer, not a complete new syntactic
-dependent type theory, an unrestricted model of HITs, or a transferred
-normalization theorem. External parameters are fixed along contextual paths;
-higher interchange and full quotient/computational-equality completeness are
-not claimed. Contextual transport and local displayed naturality are explicit
-algebra data, not automatic for arbitrary motives.
+Read [the entry README](HoTT_HIT_Dependent/README.md),
+[trust and scope](HoTT_HIT_Dependent/TRUST_AND_SCOPE.md), and
+[AFP preparation assessment](HoTT_HIT_Dependent/AFP_PREPARATION.md).
+This is a set-valued semantic extension, not a new dependent object calculus
+or a general model of HITs. The interchange hypotheses are sufficient, not
+necessary. External parameters remain fixed along contextual paths. A full
+typed universal property, higher groupoid-valued motives, quotient-level
+substitution, normalization and decidable equality remain outside this release.
 
 ## Reproduce
 
-Install **Isabelle2026** and a working LaTeX installation with pdfLaTeX, then:
+Install **Isabelle2026** and LaTeX with pdfLaTeX, then run:
 
 ```sh
-isabelle build -D . -o document_build=pdflatex HoTT_HIT_Dependent
+isabelle build -D . -o threads=2 -o document_build=pdflatex HoTT_HIT_Dependent
 ```
 
-Both this entry and the pinned public dependency are included. No private
-repository or external proof session is required. To inspect dependency hashes:
+For the AFP-style proof-outline document and browser information:
+
+```sh
+isabelle build -D . -o threads=2 -o document_build=pdflatex \
+  -o browser_info -o document=pdf \
+  -o "document_variants=document:outline=/proof,/ML" HoTT_HIT_Dependent
+```
+
+The exact pinned public dependency is included; no private repository or
+custom prebuilt proof session is required. Check dependency hashes with:
 
 ```sh
 (cd vendor && sha256sum -c SHA256SUMS)
 ```
 
-See `VERIFICATION.md` for the exact build and independent-review record.
-The new source is BSD-3-Clause; the public AFP dependency retains its original
-license and attribution under `vendor/`.
+See [VERIFICATION.md](VERIFICATION.md) for exact checked sources, commands,
+review scope and remaining readiness gates. The official AFP linter has not
+been run. No AFP, journal or registry submission has been performed.
 
-No AFP, journal or registry submission of this new entry is implied.
+The new source uses BSD-3-Clause. The public AFP dependency retains its
+original license and attribution under `vendor/`.

@@ -16,6 +16,22 @@ session HoTT_HIT_Dependent (AFP) = HoTT_HIT_Metatheory +
     DHIT_Admissible_Paths
     DHIT_Constructor_Congruence
     DHIT_Parameter_Congruence
+    DHIT_Displayed_Substitution
+    DHIT_Path_Quotient
+    DHIT_Generator_Naturality
+    DHIT_Quotient_Functor
+    DHIT_Interchange
+    DHIT_Signed_Interchange
+    DHIT_Endpoint_Paths
+    DHIT_Argument_Graph
+    DHIT_Argument_Projection
+    DHIT_Endpoint_Functor
+    DHIT_Endpoint_Serialization
+    DHIT_Coherent_Signature
+    DHIT_Local_Naturality
+    DHIT_Coherence_From_Local
+    DHIT_Affine_Model
+    DHIT_Interchange_Examples
     DHIT_Audit
   document_files
     "root.tex"

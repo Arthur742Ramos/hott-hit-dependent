@@ -1,9 +1,28 @@
+Fresh parent and entry build
+Exit status: 0
 Building HoTT_HIT_Metatheory ...
 Preparing HoTT_HIT_Metatheory/document ...
-Finished HoTT_HIT_Metatheory/document (0:00:08 elapsed time)
-Finished HoTT_HIT_Metatheory (0:00:38 elapsed time, 0:01:17 cpu time, factor 2.01)
+Finished HoTT_HIT_Metatheory/document (0:00:07 elapsed time)
+Preparing HoTT_HIT_Metatheory/outline ...
+Finished HoTT_HIT_Metatheory/outline (0:00:02 elapsed time)
+Timing HoTT_HIT_Metatheory (2 threads, 35.477s elapsed time, 55.073s cpu time, 4.725s GC time, factor 1.55)
+Finished HoTT_HIT_Metatheory (0:00:48 elapsed time, 0:01:08 cpu time, factor 1.43)
 Running HoTT_HIT_Dependent ...
 Preparing HoTT_HIT_Dependent/document ...
-Finished HoTT_HIT_Dependent/document (0:00:09 elapsed time)
-Finished HoTT_HIT_Dependent (0:00:20 elapsed time, 0:00:42 cpu time, factor 2.07)
-0:01:26 elapsed time, 0:01:59 cpu time, factor 1.37
+Finished HoTT_HIT_Dependent/document (0:00:11 elapsed time)
+Preparing HoTT_HIT_Dependent/outline ...
+Finished HoTT_HIT_Dependent/outline (0:00:09 elapsed time)
+Timing HoTT_HIT_Dependent (2 threads, 34.195s elapsed time, 60.288s cpu time, 6.870s GC time, factor 1.76)
+Finished HoTT_HIT_Dependent (0:00:36 elapsed time, 0:01:02 cpu time, factor 1.72)
+0:06:10 elapsed time, 0:02:11 cpu time, factor 0.35
+
+Exact final formatting recheck
+Exit status: 0
+Running HoTT_HIT_Dependent ...
+Preparing HoTT_HIT_Dependent/document ...
+Finished HoTT_HIT_Dependent/document (0:00:20 elapsed time)
+Preparing HoTT_HIT_Dependent/outline ...
+Finished HoTT_HIT_Dependent/outline (0:00:10 elapsed time)
+Timing HoTT_HIT_Dependent (2 threads, 106.493s elapsed time, 138.232s cpu time, 12.254s GC time, factor 1.30)
+Finished HoTT_HIT_Dependent (0:01:50 elapsed time, 0:02:22 cpu time, factor 1.29)
+0:02:51 elapsed time, 0:02:22 cpu time, factor 0.83

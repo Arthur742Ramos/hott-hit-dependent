@@ -11,77 +11,140 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-We develop set-valued dependent families over typed path presentations and
-connect them to the signatures, terms, endpoints and substitution of a
-structural higher-inductive-type calculus. Transport is bijective between
-fibers, respects inverse cancellation and reindexing, and extends generator
-boundary coherence to every composable path. For a connected presentation,
-dependent sections are classified by the elements of a chosen fiber fixed
-by generator monodromy. Dependent sums and dependent products are closed under
-transport. Displayed algebras supply recursively defined sections for recursive and
-mixed-parameter constructor fragments. Uniform local method naturality
-extends both fragments through recursive slots of point-constructor contexts.
+We connect set-valued dependent families to the actual signatures, terms and
+endpoints of a structural higher-inductive-type calculus. Within an explicit
+sufficient interchange interface, we prove that positive elementary
+recursive-slot naturality is equivalent to compatibility with all canonical
+tuple naturality cells, uniformly over constructor shells and fiber values.
+The proof establishes endpoint composition and inversion modulo interchange
+and compares endpoint motion with elementary argument serialization.
+Displayed point methods recursively construct dependent folds for recursive
+and mixed-parameter constructor grammars. Uniform boundary and contextual
+naturality laws extend their coherence to paths and indexed hom-set
+quotients, while substitution pulls back whole displayed algebras.
+Non-singleton examples separate coherence of one section from compatibility
+on every fiber element. The development is an external dependent semantic
+layer over imported syntax, not a new dependent object calculus.
 \end{abstract}
-\section{Mathematical scope}
+
+\section{Scope and relationship to the imported calculus}
 The published metatheory~\cite{HITMetatheory} has nondependent function spaces
-and constant-motive eliminators. This entry does not relabel that calculus as
-dependent. Instead, it imports its actual syntax and substitution theory and
-adds an external, set-valued dependent semantic layer. Fibers are subsets of
-a common HOL carrier; they can vary with the base term. A generating edge
-acts by a bijection between its endpoint fibers, and composite and inverse
-paths act by composed and inverse transport. This permits nontrivial
-monodromy: a Boolean fiber with negation around one loop has no section.
+and constant-motive eliminators. We import its actual signatures, syntax,
+endpoint expressions and substitution theory; we do not relabel its type
+system as dependent. The new layer consists of fibers that are subsets of a
+common HOL carrier, indexed by base vertices, with bijective transport along
+admitted edges. The admitted-edge restriction permits empty graphs and keeps
+invalid constructor instances out of the path grammar.
 
-There are two different constructions to distinguish. Generator coherence
-for an already supplied vertex assignment implies coherence along all paths.
-This is a transport theorem, not by itself an induction principle. In the
-connected case we construct the assignment from a root-fiber element fixed
-by monodromy and prove an actual bijection with sections. Separately, the
-displayed-algebra theory constructs a structural fold from point methods
-using the original point-constructor syntax, and relates the fold to original
-endpoint expressions. A mixed-parameter version supplies induction hypotheses
-only at \texttt{Rec} positions and treats \texttt{Par} arguments as opaque
-external parameters. Its current restriction excludes parameters of the
-very HIT being eliminated. Boundary method equations quantify arbitrary
-correctly typed recursive results. They are not merely asserted of the
-already constructed fold. A separate substitution theorem maps opaque
-parameter carriers to their substitution images and pulls back methods by
-substituting their ordinary arguments. The constructed fold then commutes
-exactly with the old term substitution.
+Dependent sums and products allow the second family to depend on both a base
+vertex and an element of the first family. Functions representing dependent
+products are normalized outside the source fiber. A Boolean fiber with
+negation around a loop illustrates nontrivial monodromy and the absence of
+sections. The connected-section classification assumes explicit connecting
+paths from a root and must only be used on a domain satisfying that hypothesis.
 
-Dependent products use functions normalized outside their source fiber.
-This makes inverse transport an equality of HOL functions rather than an
-equality only on the fiber. The second family depends on both a base vertex
-and an element of the first family; these are genuinely dependent sums and
-products, not merely products of two unrelated families.
+\section{Constructed sections and substitution}
+Generator coherence of a supplied assignment extends to paths, but is not
+alone a construction of an eliminator. The displayed-algebra modules instead
+recursively construct folds from point methods on the original constructor
+syntax, prove their typing and uniqueness on the designated grammar, and
+interpret original endpoint expressions. Mixed constructors provide
+induction hypotheses only at \texttt{Rec} slots. Opaque \texttt{Par} arguments
+belong to specified external carriers; same-sort parameters of the HIT being
+eliminated are excluded. A path-constructor arity containing such a parameter
+has no admitted instances in this fragment. Graph-path typing asserts
+admissibility and endpoint matching; typing in the imported object calculus
+additionally requires the explicit signature and external-parameter typing
+hypotheses. Arbitrary parameter carriers are not assumed well typed.
+Boundary equations quantify arbitrary correctly
+typed recursive results, not only the values of the completed fold.
+
+Recursive-slot contexts extend this construction through point constructors
+under uniform local displayed-method naturality. External parameters remain
+fixed along these contextual paths. Substitution commutes with the constructed
+fold and pulls back whole displayed and contextual algebras, with substituted
+parameter carriers, ordinary arguments and contexts. The source admissibility
+premises are retained: substitution need not reflect the designated grammar.
+
+\section{Equations, quotients and all-fiber coherence}
+The typed path presentation closes generating equations under equivalence,
+composition, reversal and inverse cancellation. Its quotients are actual
+sets of equivalent paths in each indexed hom-set, with identity, composition
+and inverse operations satisfying groupoid laws. These are indexed hom-sets,
+not a globally tagged arrow datatype: class sets at different endpoint pairs
+can overlap. A chosen representative is used only on genuine nonempty
+classes, and the operations and transport are proved independent of that
+choice. This is an abstract HOL construction, not an executable normalizer
+or a decision procedure for quotient equality.
+
+A family descends to the quotient when every generating equation acts equally
+on \emph{all} elements of its source fiber. This is stronger than coherence
+of one constructed section. The fold descends only from starting terms in
+its constructor grammar; the existence of an empty path at an arbitrary raw
+term does not extend that grammar. Presented path maps send edges to paths
+and, when generating equations are preserved, induce maps of hom-set
+quotients preserving identities, composition and inverses.
+
+Independent recursive slots satisfy interchange under explicit sufficient
+transport laws. The current slot-independence hypotheses are equalities of
+total transport functions, whereas their commutation law is restricted to
+the appropriate fiber. Positive squares yield all signed cases and grids
+for arbitrary paths in two distinct recursive slots. A non-singleton
+integer-vector example satisfies these laws. A counterexample fixes a
+coherent section while violating interchange on another fiber element;
+section coherence alone cannot justify the all-fiber quotient.
+A separate count-affine model has infinite fibers and realizes an actual
+recursive-generator naturality square with arbitrary residual integer values.
+Its transport depends only on endpoints, so it witnesses consistency rather
+than faithfulness of the specified path equations.
+
+\section{Original endpoints and generator naturality}
+The endpoint action recursively follows the imported \texttt{EArg} and
+\texttt{ECon} syntax. Canonical path-constructor instances retain their
+constructor identifier and argument tuple. Endpoint motion has proved typed
+boundaries, and an explicit argument graph serializes simultaneous recursive
+argument motions into elementary moves while holding external parameters
+fixed. Beyond typing, the endpoint action now has verified identity,
+composition and inversion laws modulo interchange. Its value on a tuple is
+proved equivalent to the path image of the tuple's elementary serialization.
+
+A combined presentation adds canonical generator-naturality cells under
+valid outer constructor shells to interchange. Within the same sufficient
+interchange interface, compatibility with all tuple naturality cells is
+proved equivalent to positive elementary recursive-slot naturality. Both
+conditions range over every valid outer shell and every source-fiber value.
+Elementary edges may already be contextual, not only bare generators.
+Accordingly these are conditional coherence results, not a claim that
+arbitrary point methods or endpoint actions automatically define a coherent
+HIT algebra.
+
+For a contextual displayed algebra with the same methods and transport,
+the recursively constructed fold descends to this combined coherence
+quotient. The theorem includes typing of its value at the target and retains
+the constructor-grammar premise at the source. It assumes no pre-existing
+global section.
 
 \section{Relationship to prior work}
-The general ideas of transported families, displayed algebras and dependent
-elimination are established type-theoretic mathematics; see the HoTT
-book~\cite{HoTTBook2013}, the groupoid interpretation~\cite{HofmannStreicher1998},
-homotopy-initial algebras~\cite{Sojakova2015}, signatures and induction
+Transported families, displayed algebras and dependent elimination are
+established mathematics; see the HoTT book~\cite{HoTTBook2013}, the groupoid
+interpretation~\cite{HofmannStreicher1998}, homotopy-initial
+algebras~\cite{Sojakova2015}, signatures and induction
 principles~\cite{KaposiKovacs2020}, and groupoid constructions of
-HITs~\cite{DybjerMoeneclaey2018,VeltriVanDerWeide2021}. Our contribution is the explicitly scoped
-Isabelle/HOL development and its proved connection to the imported structural
-syntax, not a claim to have invented dependent elimination.
+HITs~\cite{DybjerMoeneclaey2018,VeltriVanDerWeide2021}. The contribution here is
+the scoped Isabelle/HOL development and its proved connection to the imported
+structural syntax, rather than a new general theory of dependent elimination.
+The AFP entries Category3~\cite{Category3AFP} and Catoids~\cite{CatoidsAFP}
+provide related established library infrastructure. They are cited for
+context; this entry does not import or reuse their formal theories.
 
-\section{Boundaries of the result}
-No new dependent lambda-calculus syntax, universe, univalence principle, Kan
-operation, or arbitrary higher-dimensional HIT is introduced. The fibers are
-sets, not general groupoids. The path presentation closes admitted constructor
-instances under composition and inverse. Further theorems add constructor-context edges through recursive slots,
-including mixed-parameter constructors, and derive coherence from uniform
-local displayed-method naturality. External parameters are held fixed along
-these paths; congruence paths varying external parameter values are not
-included.
-No interchange or higher coherence, or completeness for all equality of the
-original calculus, is asserted. An assumption
-about displayed boundary methods is not a proof that arbitrary methods are
-coherent. Connected classification assumes explicit paths from a root to
-every vertex and must not be applied to all raw terms when only a typed
-component is connected. Inverse-cancellation subject reduction and termination
-concern the path calculus only. Strong normalization of the old nondependent
-calculus is neither invoked nor transferred to a hypothetical dependent one.
+\section{Boundaries}
+No dependent lambda-calculus syntax, universe, univalence principle, Kan
+operation, groupoid-valued motive, general higher-dimensional HIT, or full
+typed universal property is established. The equations added here are not
+claimed complete for the equality of the original calculus. Path cancellation
+subject reduction and termination do not establish normalization of a
+dependent calculus; no normalization theorem is transferred from the imported
+nondependent development.
 
 \tableofcontents
 \input{session}

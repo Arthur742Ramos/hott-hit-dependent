@@ -1,88 +1,153 @@
 # Dependent families and displayed algebras over structural HIT syntax
 
-This new Isabelle entry expands the mathematics of `HoTT_HIT_Metatheory`.
-It is not a checker extension, and does not change the old calculus.
+This Isabelle/HOL development extends the mathematics of the published
+`HoTT_HIT_Metatheory`. It imports the original signatures, terms, endpoints,
+typing and substitution; it neither changes that calculus nor extends its
+executable checker.
 
-## What is formalized
+See [VERIFICATION.md](VERIFICATION.md) and `SOURCE_MANIFEST.json` for the
+exact checked source, toolchain, review and document record. No AFP submission
+or acceptance is claimed.
 
-- Typed signed paths, endpoint preservation under inverse cancellation,
-  terminating cancellation, and a typed path-equality presentation.
-- Genuinely varying set-valued fibers and mutually inverse edge transport.
-  Transport preserves fibers, is bijective, respects path equality, and
-  satisfies inverse/composition laws.
-- Generator boundary coherence iff coherence along every typed path.
-- In a connected graph with chosen routes, a constructive bijection between
-  sections and root-fiber elements fixed by generator monodromy. The extension
-  is independent of the route used to reach a vertex.
-- Dependent sums and normalized dependent products for second families
-  `G x a`, including typing, beta/eta, and evaluation naturality.
-- Actual imports of the old `tm`, `endpt`, `hsig`, `wt`, and `subst`.
-  Original endpoint interpretation commutes with term substitution;
-  substitution preserves selected well-typed constructor-instance graphs and
-  induces pullback of dependent families.
-- Actual term substitution preserves mixed constructor trees when opaque
-  parameter carriers are mapped to their substitution images. The constructed
-  fold and endpoint evaluation commute with substitution under explicitly
-  pulled-back methods; displayed algebras pull back accordingly.
-- Displayed point algebras construct structural dependent folds on original
-  constructor terms, with typing, beta equations, uniqueness, and dependent
-  endpoint interpretation. Boundary methods are uniform over arbitrary typed
-  induction-hypothesis lists, not post-hoc checks of a finished fold.
-- A mixed `Par`/`Rec` extension masks induction hypotheses at parameter
-  positions, permits supplied external parameter terms, and retains the original
-  arities and endpoints. Its first theorem restricts `Par j` to `j != h`.
-- Constructor contexts through recursive slots, including mixed-parameter
-  constructors, give genuine contextual generating edges. Local displayed point-method naturality yields fold
-  coherence under these edges, composed/inverse paths, and admitted path
-  cancellation. Edge-admissibility predicates include empty-edge graphs.
+## Mathematical results
 
-Examples distinguish real dependence and nontrivial monodromy: distinct
-endpoint fibers, a twisted Boolean loop with no section, and second fibers
-that depend on both the vertex and the first component.
+### Dependent families and constructed sections
 
-## What is not claimed
+Fibers are subsets of a common HOL carrier and can vary with a base term.
+Typed admitted paths act by bijections between fibers. The admitted edge set
+can be empty. Generator boundary coherence extends to all admitted paths;
+for a connected graph with chosen routes, sections are classified by the
+root-fiber elements fixed by generator monodromy. Dependent sums and
+normalized dependent products support genuinely second-indexed families
+`G x a`, with computation and transport laws.
 
-This is a semantic dependent layer in Isabelle/HOL, not a new full dependent
-lambda calculus. There is no universe, univalence, Kan structure, general
-higher-dimensional HIT, or groupoid-valued motive. No normalization result is
-inherited from the old nondependent calculus. Path-cancellation preservation
-is not a dependent lambda-calculus subject-reduction theorem.
+Displayed point methods construct recursive sections on the original
+constructor-tree grammar. Typing, point computation, uniqueness and endpoint
+interpretation are proved. The mixed-argument version supplies induction
+hypotheses only at `Rec` positions; `Par j` arguments are supplied opaque
+terms, with `j != h` for the HIT being eliminated. Uniform boundary methods
+quantify arbitrary correctly typed induction hypotheses, not only the values
+of the finished fold.
 
-Constructor contexts may vary recursive arguments while external parameters
-are held fixed. Paths varying external parameter values are not included.
-Contextual transport is part of the motive's supplied algebra data;
-local method naturality is a real obligation, not synthesized for arbitrary
-families. We do not assert interchange, higher coherence, homotopy-initiality
-of a full quotient HIT, or equality descent for the full old calculus. The
-connected-family classification applies to a connected vertex type, not
-silently to every raw `tm`.
+Constructor contexts may change recursive slots while surrounding parameters
+remain fixed. Given contextual transport and uniform local method naturality,
+the constructed section is coherent under those contextual paths. Whole
+mixed displayed-HIT algebras, including their path-method obligations, pull
+back under the original term substitution. Contextual algebras also pull back,
+with substituted surrounding terms and context-indexed transport. Source
+argument/tree admissibility is retained explicitly; it is not inferred
+backwards from well-formed substituted terms.
 
-A global section assumed in a coherence theorem is not a constructed HIT
-eliminator. The monodromy classification and displayed folds are the separate
-construction results. Boundary coherence and constructor naturality are
-necessary local method obligations, not automatically true for arbitrary
-methods. The old-term substitution theorem is not a substitution theorem for
-a newly defined syntactic dependent lambda calculus.
+### Path equations and actual quotients
 
-## Build
+A typed presentation closes specified path equations under symmetry,
+transitivity, composition, reversal and inverse cancellation. Its hom sets
+are actual sets of equivalence classes. Identity, composition and inverse
+operations are defined and proved lawful. Transport is defined on these
+classes and is independent of the chosen representative, provided every
+specified equation is respected on **all elements of its source fiber**.
+Maps sending generating edges to typed paths induce maps of these hom-set
+quotients when they preserve the specified equations.
 
-Target: **Isabelle2026**. Supply the exact public `HoTT_HIT_Metatheory` source
-as a session directory, then run:
+These are indexed hom sets, not a globally tagged arrow datatype. Identity
+classes at different objects can have the same underlying set. Constructed
+fold descent is restricted to valid constructor trees; it does not assert a
+global dependent section on every raw `tm`.
+
+### Interchange and original path-constructor naturality
+
+The presentation includes independent recursive-slot interchange under valid
+outer constructor contexts. Signed-generator and arbitrary two-path grid
+interchange are derived. A sufficient transport interface requires equality
+of the relevant total slot-action functions when the other slot endpoint
+changes, plus commutation on all elements of the appropriate source fiber.
+These are explicit, strong sufficient hypotheses, not a characterization of
+all possible coherent families.
+
+The original `EArg`/`ECon` endpoint syntax acts on typed tuples of argument
+paths. The canonical edge graph uses actual pairs `(constructor, arguments)`,
+so changed constructor arguments have their own generating instances.
+Naturality squares for those original path constructors are typed, and local
+all-fiber squares extend along composed and reversed paths in a supplied
+argument graph.
+
+`Coherent_Signature` combines shell-closed interchange and canonical
+naturality cells. The endpoint action preserves identity, composition and
+inverses modulo interchange. Its elementary serialization is equivalent to
+the direct action of the original endpoint expression.
+
+### Examples and separating results
+
+Verified examples include a Boolean twisted loop with no section, genuinely
+varying endpoint fibers, and an infinite-fiber binary-constructor example
+with two free integer coordinates. The latter verifies interchange on all
+fiber elements, not merely on the constructed section.
+
+A counterexample has coherent displayed point methods and a preserved
+selected section but noncommuting transports on another fiber element. It
+shows why fold coherence cannot replace all-fiber relation compatibility and
+why interchange adds equations beyond inverse cancellation.
+
+The separately verified count-affine model has infinite fibers and a concrete
+recursive-generator naturality square with arbitrary residual integer values.
+Its transport depends only on endpoints: it respects every parallel equation,
+so it witnesses consistency rather than faithfulness of the chosen presentation.
+
+### Local-to-global coherence
+
+Within the stated sufficient interchange-family interface, compatibility
+with all canonical tuple naturality cells is equivalent to positive
+single-recursive-slot naturality. Both conditions quantify every valid outer
+constructor shell and every element of the source fiber. Elementary edges may
+already be recursive constructor-context edges; no reduction to bare path
+generators alone is claimed. The proof compares serialized elementary endpoint
+images with direct endpoint motion modulo interchange. The same strong
+slot-independence and commutation assumptions remain on both sides.
+
+The specialization `constructed_coherent_elimination` assumes a
+contextual displayed algebra with the same signature, carriers, motive,
+constructor methods and transport actions. It descends the recursively
+constructed fold to the derived combined coherence quotient and proves the
+target fold lies in its fiber, starting from a term in the constructor
+grammar. It assumes no pre-existing global section.
+
+## Deliberate limits
+
+This is a set-valued semantic layer, not a new syntactic dependent type theory
+or a general model of higher inductive types. There is no claimed universe,
+univalence, Kan structure, groupoid-valued motive, full typed universal
+property, homotopy-initiality theorem, or equality completeness for the old
+calculus. External parameter values do not vary along contextual paths.
+
+Inverse cancellation terminates, but no normalizer or decidable equality for
+the enlarged path presentation is claimed. No dependent normalization theorem
+is inherited from the old nondependent calculus. Higher coherence beyond the
+specified equations is not inferred automatically.
+
+## Build and verification
+
+Target: **Isabelle2026**. Supply the pinned public `HoTT_HIT_Metatheory` session:
 
 ```sh
-isabelle build -d /path/to/HoTT_HIT_Metatheory -D . -o document_build=pdflatex HoTT_HIT_Dependent
+isabelle build -d /path/to/HoTT_HIT_Metatheory -D . \
+  -o threads=2 -o document_build=pdflatex HoTT_HIT_Dependent
 ```
 
-Use `-o document=false` for a proof-only iteration. The verification record
-will identify the final source hashes and build status. No AFP submission or
-acceptance of this new entry is implied.
+The session includes every theory and its headline oracle-dependency audit.
+The verification record identifies the full proof/PDF builds and source hashes.
+See `AFP_PREPARATION.md` for the remaining submission-readiness checks, notably
+the official linter, which has not been run.
 
 ## Attribution and related work
 
-Arthur Freitas Ramos, David Barros Hulak, and Ruy de Queiroz. This builds on
-their published structural HIT metatheory. General dependent-family and
-monodromy mathematics is established; the claimed deliverable is a scoped
-formalization and integration, not a new foundational theory.
+Arthur Freitas Ramos, David Barros Hulak, and Ruy de Queiroz. This is a scoped
+formalization and integration of established mathematics, not a claim to have
+invented dependent elimination, monodromy, or category theory.
 
-See the generated document bibliography for the HoTT book, Hofmann--Streicher,
-Sojakova, Kaposi--Kovacs, and Veltri--van der Weide.
+Primary references include the HoTT book, Hofmann--Streicher, Sojakova,
+Kaposi--Kovacs, Dybjer--Moeneclaey and Veltri--van der Weide. Related established
+AFP infrastructure includes Eugene Stark's [Category3](https://isa-afp.org/entries/Category3.html)
+(2016) and Georg Struth's [Catoids](https://isa-afp.org/entries/Catoids.html)
+(2023). They are related work, **not imported or reused dependencies** of this
+entry. The actual dependency is the published structural HIT metatheory and
+its Isabelle/HOL base.

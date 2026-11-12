@@ -523,12 +523,12 @@ interpretation parameter_list_hit: parameter_hit_algebra parameter_list_signatur
   "\<lambda>u. {point_count u}" "count_parameter_method parameter_list_signature 0"
   "\<lambda>n::nat. 0" "\<lambda>n. [PCon 1 0 [], parameter_list n]"
   "\<lambda>_ n. n - 2" "\<lambda>_ n. n + 2"
-  apply unfold_locales
-  apply (rule parameter_displayed_algebra.method_type[OF count_parameter_algebra]; assumption)
-  using parameter_list_signature_wf parameter_list_tree
-  by (auto simp: lhsOf_def rhsOf_def parameter_list_signature_def
-    parameter_arguments_def external_arity_def parameter_carrier_def list_parameters_def
-    displayed_pair_arguments count_parameter_method_def less_Suc_eq)
+  by (unfold_locales,
+      (rule parameter_displayed_algebra.method_type[OF count_parameter_algebra]; assumption),
+      insert parameter_list_signature_wf parameter_list_tree,
+      auto simp: lhsOf_def rhsOf_def parameter_list_signature_def
+        parameter_arguments_def external_arity_def parameter_carrier_def list_parameters_def
+        displayed_pair_arguments count_parameter_method_def less_Suc_eq)
 
 lemma parameter_list_original_graph:
   "typed_hit_graph parameter_list_signature D G 0
