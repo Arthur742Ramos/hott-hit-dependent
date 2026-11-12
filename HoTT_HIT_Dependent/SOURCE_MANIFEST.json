@@ -1,0 +1,23 @@
+{
+  "format": "SHA256 of formal and document sources",
+  "source_set_sha256": "00f8cb856ed4ee8cc2212a8561bd0ba0de33debf3053b99dc32d4c8e5b7e3c59",
+  "files": {
+    "DHIT_Admissible_Paths.thy": "4e5f288f6e204c1177b7ff277508f22b2ea5839b53d01c839fae19d5b71fd2eb",
+    "DHIT_Audit.thy": "a6385347b6af5dc592cf9c8c4ca6e0c92ee7a721ee8b23fbb291878cdcf45b0d",
+    "DHIT_Constructor_Congruence.thy": "5c8bd1c07b4b61ec64348b27017c423b141f47eb6244f0d7f88afddd95619602",
+    "DHIT_Dependent_Transport.thy": "85a9752a40ed2bd4866de50b9a587149940e2a9d34fa56d44ca16d3c3328301f",
+    "DHIT_Displayed_Algebra.thy": "a93b3a8b47db4cf6d7c035441bacb387ba52ce91248c25f00bbe28e53f6fc83d",
+    "DHIT_Families.thy": "bd86ae80689a45b754b9af81c5433ae7d3c2000064f302e812d0333ed2ac206b",
+    "DHIT_Parameter_Algebra.thy": "1fae1f213927c07cf905dc429e7f76a9d7b2beb29cd16f3fa5e56ddd9c299d88",
+    "DHIT_Parameter_Congruence.thy": "c7fa3d29e2e37a3ebfe1127fed4cb9754b5a883b38d73dd7f19febdd017b0174",
+    "DHIT_Parameter_Substitution.thy": "f624fa6fd07c224442d28ea038987f423b7fbbd1f24d4296c26c535b453f0446",
+    "DHIT_Paths.thy": "b3c12c851fd8c4f72a1a9fd5fd29245b778a5144708ec919963ceaf6020b597b",
+    "DHIT_Reindexing.thy": "ef4f003dd8a4369f9e61d8cf012d9f2895491d3e9bfe1b7f2b98d756928d0ac4",
+    "DHIT_Sections.thy": "6d452b1a641571a25d94678a3cbf9b88f82406257e55c7ef6045112c605f0db1",
+    "DHIT_Syntax_Bridge.thy": "7d86f8d699d4fb59a5d35f30eaeb6e3c345a939e8c741b481d98056d222b58c7",
+    "DHIT_Type_Formers.thy": "6387b68f8762f814d6944cd146532561a2a90349ae1a82d34e1fc4170df0b5d4",
+    "ROOT": "a82bf8dcf4f28be192062d42f1f0050b69103157b4c70904c02bc81abc84aa75",
+    "document/root.bib": "dbca48f3c3a5e19f36022f9a2a141fe5277515097a0ed9cbf46062156c5926ff",
+    "document/root.tex": "c11bbff4afdf1da02cd6fdced0e3fa76b3d942873217abed963148138e2beafa"
+  }
+}

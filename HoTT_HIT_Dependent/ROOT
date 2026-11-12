@@ -1,0 +1,22 @@
+chapter AFP
+
+session HoTT_HIT_Dependent (AFP) = HoTT_HIT_Metatheory +
+  options [timeout = 1800, document = pdf]
+  theories
+    DHIT_Paths
+    DHIT_Families
+    DHIT_Reindexing
+    DHIT_Sections
+    DHIT_Type_Formers
+    DHIT_Dependent_Transport
+    DHIT_Syntax_Bridge
+    DHIT_Displayed_Algebra
+    DHIT_Parameter_Algebra
+    DHIT_Parameter_Substitution
+    DHIT_Admissible_Paths
+    DHIT_Constructor_Congruence
+    DHIT_Parameter_Congruence
+    DHIT_Audit
+  document_files
+    "root.tex"
+    "root.bib"
