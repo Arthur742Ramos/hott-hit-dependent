@@ -61,7 +61,11 @@ definition lift_path :: "unit constructor_edge \<Rightarrow> 'e constructor_edge
 lemma lift_path_identity [simp]: "lift_path (Generator ()) p = p"
 proof -
   have H: "map_dart (plug_edge (Generator ())) = id"
-    by (rule ext; rename_tac d; case_tac d; simp)
+  proof
+    fix d
+    show "map_dart (plug_edge (Generator ())) d = id d"
+      by (cases d) simp_all
+  qed
   show ?thesis by (simp only: lift_path_def H; simp)
 qed
 

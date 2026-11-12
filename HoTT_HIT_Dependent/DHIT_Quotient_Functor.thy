@@ -1,5 +1,5 @@
 theory DHIT_Quotient_Functor
-  imports DHIT_Path_Quotient DHIT_Generator_Naturality
+  imports DHIT_Reindexing DHIT_Path_Quotient DHIT_Generator_Naturality
 begin
 
 section \<open>Reversing a presented naturality square\<close>
@@ -144,30 +144,6 @@ section \<open>Single-edge images cover constructor-shell lifts\<close>
 
 lemma path_image_singletons:
   "path_image (\<lambda>e. [Pos (H e)]) p = map (map_dart H) p"
-  by (induct p; simp; rename_tac d p; case_tac d; simp)
-
-section \<open>Descent of the constructed section on its proved grammar\<close>
-
-context contextual_parameter_algebra
-begin
-
-context
-  fixes R
-  assumes quotient: "quotient_family admitted csrc cdst F upC downC R"
-begin
-
-interpretation Q: quotient_family admitted csrc cdst F upC downC R
-  by (rule quotient)
-
-lemma constructed_section_quotient_descent:
-  assumes C: "C \<in> Q.quotient_hom x y" and T: "parameter_tree S h P x"
-  shows "Q.quotient_transport x y C (parameter_fold S h M x) = parameter_fold S h M y \<and>
-    parameter_fold S h M y \<in> F y"
-  using contextual_dependent_eliminator[OF T Q.representative_typed[OF C]]
-  by (simp add: Q.quotient_transport_def)
-
-end
-
-end
+  by (induct "\<lambda>e. [Pos (H e)]" p rule: path_image.induct) simp_all
 
 end

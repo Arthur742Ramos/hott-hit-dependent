@@ -1,5 +1,5 @@
 theory DHIT_Endpoint_Serialization
-  imports DHIT_Endpoint_Functor DHIT_Argument_Projection
+  imports DHIT_Endpoint_Functor
 begin
 
 text \<open>Endpoint functoriality identifies the elementary argument-graph

@@ -1,8 +1,6 @@
 theory DHIT_Audit
-  imports DHIT_Syntax_Bridge DHIT_Dependent_Transport DHIT_Sections DHIT_Displayed_Algebra
-    DHIT_Parameter_Algebra DHIT_Parameter_Substitution DHIT_Constructor_Congruence DHIT_Parameter_Congruence
-    DHIT_Displayed_Substitution DHIT_Quotient_Functor DHIT_Signed_Interchange
-    DHIT_Argument_Graph DHIT_Affine_Model DHIT_Interchange_Examples DHIT_Local_Naturality DHIT_Argument_Projection DHIT_Coherence_From_Local
+  imports DHIT_Type_Formers DHIT_Sections DHIT_Displayed_Substitution
+    DHIT_Affine_Model DHIT_Interchange_Examples DHIT_Coherence_From_Local
 begin
 
 section \<open>Proof-dependency audit\<close>

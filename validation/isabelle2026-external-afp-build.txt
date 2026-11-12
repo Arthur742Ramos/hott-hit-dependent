@@ -1,3 +1,5 @@
+HISTORICAL: pre-consolidation source; not evidence for the current manifest.
+
 Current vendor-free package; external official AFP snapshot afp-2026-11-12.
 Fresh isolated Isabelle2026 user state; parent and new entry rebuilt.
 Command: isabelle build -d "$AFP/thys" -D . -o threads=2 -o document_build=pdflatex -o document=pdf -o browser_info=true -o "document_variants=document:outline=/proof,/ML" HoTT_HIT_Dependent

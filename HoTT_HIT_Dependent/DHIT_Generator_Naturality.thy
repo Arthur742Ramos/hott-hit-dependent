@@ -1,5 +1,5 @@
 theory DHIT_Generator_Naturality
-  imports DHIT_Parameter_Congruence
+  imports DHIT_Admissible_Paths
 begin
 
 section \<open>Interpreting argument paths in endpoint expressions\<close>
@@ -11,11 +11,11 @@ fun path_image :: "('e \<Rightarrow> 'd dart list) \<Rightarrow> 'e dart list \<
 
 lemma path_image_append [simp]:
   "path_image L (p @ q) = path_image L p @ path_image L q"
-  by (induct p; simp; rename_tac a p; case_tac a; simp)
+  by (induct L p rule: path_image.induct) simp_all
 
 lemma path_image_reverse [simp]:
   "path_image L (reverse_path p) = reverse_path (path_image L p)"
-  by (induct p; simp; rename_tac a p; case_tac a; simp)
+  by (induct L p rule: path_image.induct) simp_all
 
 locale path_interpretation =
   fixes E :: "'e set" and s t :: "'e \<Rightarrow> 'v"

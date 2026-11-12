@@ -101,7 +101,13 @@ qed
 lemma ih_mask_append:
   "length ss = length ys \<Longrightarrow>
     ih_mask (ss @ ts) (ys @ zs) = ih_mask ss ys @ ih_mask ts zs"
-  by (induct ss arbitrary: ys; case_tac ys; simp_all add: ih_mask_def)
+proof (induct ss arbitrary: ys)
+  case Nil
+  then show ?case by (simp add: ih_mask_def)
+next
+  case (Cons s ss)
+  then show ?case by (cases ys) (simp_all add: ih_mask_def)
+qed
 
 lemma displayed_arguments_zip:
   assumes "length ss = length xs"

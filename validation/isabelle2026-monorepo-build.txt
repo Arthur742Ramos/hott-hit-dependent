@@ -1,4 +1,6 @@
-Historical pre-external-packaging validation; see isabelle2026-external-afp-build.txt for the current configuration.
+HISTORICAL: pre-consolidation source; not evidence for the current manifest.
+
+Historical pre-external-packaging validation; see isabelle2026-external-afp-build.txt for the then-current configuration.
 
 Fresh parent and entry build
 Exit status: 0

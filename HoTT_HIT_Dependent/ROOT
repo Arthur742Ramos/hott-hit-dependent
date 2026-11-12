@@ -8,7 +8,6 @@ session HoTT_HIT_Dependent (AFP) = HoTT_HIT_Metatheory +
     DHIT_Reindexing
     DHIT_Sections
     DHIT_Type_Formers
-    DHIT_Dependent_Transport
     DHIT_Syntax_Bridge
     DHIT_Displayed_Algebra
     DHIT_Parameter_Algebra
@@ -24,7 +23,6 @@ session HoTT_HIT_Dependent (AFP) = HoTT_HIT_Metatheory +
     DHIT_Signed_Interchange
     DHIT_Endpoint_Paths
     DHIT_Argument_Graph
-    DHIT_Argument_Projection
     DHIT_Endpoint_Functor
     DHIT_Endpoint_Serialization
     DHIT_Coherent_Signature

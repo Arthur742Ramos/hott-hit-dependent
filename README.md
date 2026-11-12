@@ -57,7 +57,7 @@ or private repository is required. The project `ROOTS` lists only the new entry.
 
 See [VERIFICATION.md](VERIFICATION.md) for exact checked sources, commands,
 review scope and remaining readiness gates. The official mandatory lint bundle
-passes with zero findings; the default bundle has 19 independently reviewed
+passes with zero findings; the default bundle has 8 independently reviewed
 advisories. See [LINT.md](HoTT_HIT_Dependent/LINT.md). No AFP, journal or registry
 submission has been performed.
 

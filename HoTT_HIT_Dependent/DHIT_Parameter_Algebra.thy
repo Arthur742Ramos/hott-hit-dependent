@@ -67,8 +67,12 @@ proof (induct rule: parameter_tree.induct)
     show "k < length (pcons (S h))" by fact
     show "length xs = length (pcons (S h) ! k)" by fact
     show "\<forall>i<length xs. wt S D G (xs ! i) (argTy h (pcons (S h) ! k ! i))"
-      using node parameters
-      by (intro allI impI; rename_tac i; case_tac "pcons (S h) ! k ! i"; auto)
+    proof (intro allI impI)
+      fix i
+      assume "i < length xs"
+      with node parameters show "wt S D G (xs ! i) (argTy h (pcons (S h) ! k ! i))"
+        by (cases "pcons (S h) ! k ! i") auto
+    qed
   qed
 qed
 

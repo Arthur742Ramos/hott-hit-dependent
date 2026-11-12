@@ -10,7 +10,7 @@ not changed. Version: **Isabelle2026-v1.0.0**, commit
 Every downloaded source blob was checked against that official Git tree.
 
 Isabelle2026 was used throughout. The exact final formal/document source-set
-SHA256 is `bbe74d0f6c3d17973d7e9913309989c39e42c082f4d330cfb3271f11f2a6ee20`. Both runs processed all **30 proper theories** of
+SHA256 is `3b406539212fa7901f2a545f40a55e16a54194abdaa718378fe9beafc32b722e`. Both runs processed all **28 proper theories** of
 `HoTT_HIT_Dependent`; no missing-theory diagnostic was present. The parent
 metatheory was built as a dependency, not included in these lint counts.
 No rules were disabled and no source suppressions were added. Both bundles
@@ -20,10 +20,9 @@ were rerun successfully with the parent supplied by the separate official
 ## Results
 
 - **`afp_mandatory`: 0 errors, 0 warnings, exit 0.**
-- **`default`: 0 errors, 19 advisory warnings, exit 0** with the failure
+- **`default`: 0 errors, 8 advisory warnings, exit 0** with the failure
   threshold set to `error`. This is not a warning-free default-bundle result.
-- Remaining advisories: `complex_method` 7, `tactic_proofs` 7,
-  `auto_structural_composition` 5.
+- Remaining advisories: `complex_method` 3, `auto_structural_composition` 5.
 
 The mandatory bundle enabled `bad_style_command`, `counter_example_finder`,
 `global_attribute_on_unnamed_lemma`, `proof_finder`,
@@ -44,15 +43,17 @@ anonymous proof context inside the existing locale. Context exit restores the
 imported simplifier state without a global change-and-restore pattern.
 No mathematical definition, theorem statement or hypothesis was changed.
 
-Every remaining advisory site was independently reviewed. The seven flagged
-tactic uses operate on explicit source-bound or explicitly renamed variables,
-not unstable Isabelle-generated names. The complex-method warnings concern
-short map/list proofs, a length-guarded tuple decomposition and two focused
-locale assemblies. The five auto-composition warnings are terminal
-metis/linear-arithmetic closers with explicit fiber, typing or coordinate
-hypotheses. These short checked proofs were retained rather than rewritten
-solely to achieve zero nonmandatory warnings. This is an automated independent
-review, not external human peer review.
+The consolidation pass replaced seven tactic-style proof sites with functional
+induction or explicit Isar binders/cases. This removed all seven `tactic_proofs`
+advisories and four `complex_method` advisories: the default total fell from
+19 to 8 without disabling rules. No definition, statement or hypothesis changed.
+
+The three remaining complex-method advisories concern a length-guarded tuple
+decomposition and two focused locale assemblies. Five auto-composition
+advisories concern terminal metis/linear-arithmetic closers with explicit fiber,
+typing or coordinate hypotheses. Independent review retained these checked
+proofs rather than adding scaffolding solely to reach zero nonmandatory warnings.
+This is an automated review, not external human peer review.
 
 ## Reproduce
 

@@ -1,5 +1,5 @@
 theory DHIT_Endpoint_Paths
-  imports DHIT_Generator_Naturality
+  imports DHIT_Parameter_Congruence DHIT_Generator_Naturality
 begin
 
 section \<open>Path action of the original endpoint syntax\<close>

@@ -64,8 +64,8 @@ manual review is not an official linter pass.
   that arithmetic requirement.
 - One intended AFP session and its PDF, with correct ROOT/document layout.
 - Appropriate primary citations and complete, correctly rendered references.
-- Official `afp_mandatory` lint now passes all 30 theories with zero findings.
-  The default bundle reports 19 independently reviewed advisories, not errors.
+- Official `afp_mandatory` lint now passes all 28 theories with zero findings.
+  The default bundle reports 8 independently reviewed advisories, not errors.
   See `LINT.md` for the pinned official release, rules and exact source scope.
   This does not certify every guideline or editorial requirement.
 

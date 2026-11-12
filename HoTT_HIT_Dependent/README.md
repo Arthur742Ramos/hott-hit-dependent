@@ -111,6 +111,26 @@ constructed fold to the derived combined coherence quotient and proves the
 target fold lies in its fiber, starting from a term in the constructor
 grammar. It assumes no pre-existing global section.
 
+## Reading guide
+
+The files are organized by mathematical interfaces rather than by the history
+of proof tasks. Suggested entry points (the `DHIT_` prefix is omitted):
+
+| Goal | Theories and principal results |
+| --- | --- |
+| Families, dependent sums/products, and transport | `Paths`, `Families`, `Type_Formers`; `dependent_cancellation_subject_reduction` |
+| Sections and reindexing | `Sections`, `Reindexing`; `section_bijection`, `dependent_section_substitution` |
+| Actual imported syntax and constructed induction | `Syntax_Bridge`, `Displayed_Algebra`, `Parameter_Algebra`; constructed folds, point computation and uniqueness |
+| Whole-algebra substitution and contexts | `Parameter_Substitution`, `Constructor_Congruence`, `Parameter_Congruence`, `Displayed_Substitution` |
+| Generic path equations and quotient actions | `Admissible_Paths`, `Generator_Naturality`, `Path_Quotient`, `Quotient_Functor` |
+| Constructor and endpoint functoriality | `Interchange`, `Signed_Interchange`, `Endpoint_Paths`, `Argument_Graph`, `Endpoint_Functor`, `Endpoint_Serialization` |
+| Main coherence and elimination results | `Coherent_Signature`, `Local_Naturality`, `Coherence_From_Local`; `local_global_signature_coherence`, `constructed_coherent_elimination` |
+| Concrete models and separation | `Affine_Model`, `Interchange_Examples` |
+
+`Audit` assembles the development and checks the selected headline results
+for oracle dependencies. See `CONSOLIDATION.md` for the organization changes
+and the affected theory-qualified names.
+
 ## Deliberate limits
 
 This is a set-valued semantic layer, not a new syntactic dependent type theory
@@ -136,8 +156,8 @@ isabelle build -d "$AFP/thys" -D . \
 
 The session includes every theory and its headline oracle-dependency audit.
 The verification record identifies the full proof/PDF builds and source hashes.
-The official `afp_mandatory` linter bundle passes all 30 theories with zero
-findings. The default bundle retains 19 independently reviewed advisories.
+The official `afp_mandatory` linter bundle passes all 28 theories with zero
+findings. The default bundle retains 8 independently reviewed advisories.
 See `LINT.md` for exact rules/results and `AFP_PREPARATION.md` for remaining
 author and submission-readiness decisions.
 

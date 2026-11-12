@@ -1,0 +1,17 @@
+Current minimal32-file stage; same manifest3b406539212fa7901f2a545f40a55e16a54194abdaa718378fe9beafc32b722e.
+Isabelle2026 externalAFP; fullproof/document; exit0.
+
+Session Pure/Pure
+Session Misc/Tools
+Session HOL/HOL (main)
+Session AFP/HoTT_HIT_Metatheory (AFP)
+Session AFP/HoTT_HIT_Dependent (AFP)
+Running HoTT_HIT_Dependent ...
+Preparing HoTT_HIT_Dependent/document ...
+Finished HoTT_HIT_Dependent/document (0:00:11 elapsed time)
+Preparing HoTT_HIT_Dependent/outline ...
+Finished HoTT_HIT_Dependent/outline (0:00:09 elapsed time)
+Timing HoTT_HIT_Dependent (2 threads, 40.076s elapsed time, 73.597s cpu time, 9.046s GC time, factor 1.84)
+Finished HoTT_HIT_Dependent (0:00:43 elapsed time, 0:01:17 cpu time, factor 1.76)
+Finished at Thu Nov 12 17:52:18 GMT-3 2026
+0:01:12 elapsed time, 0:01:17 cpu time, factor 1.06
